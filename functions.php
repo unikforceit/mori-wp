@@ -138,10 +138,21 @@ add_action( 'widgets_init', 'mori_wp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function mori_wp_scripts() {
-	wp_enqueue_style( 'mori-wp-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'mori-wp-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'mori-wp-style', get_stylesheet_uri(), array(), mori_dynamic_version() );
+//	wp_style_add_data( 'mori-wp-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'mori-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'mori-wp-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), mori_dynamic_version(), 'all' );
+	wp_enqueue_style( 'mori-wp-fontawesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), mori_dynamic_version(), 'all' );
+    wp_enqueue_style('mori-wp-swiper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), mori_dynamic_version(), 'all');
+	wp_enqueue_style( 'mori-wp-custom', get_template_directory_uri() . '/assets/css/mori.css', array(), mori_dynamic_version(), 'all' );
+
+	wp_enqueue_script( 'mori-wp-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), mori_dynamic_version(), true );
+
+    wp_enqueue_script( 'mori-wp-swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), mori_dynamic_version(), true );
+    wp_enqueue_script( 'mori-wp-fontawesome', get_template_directory_uri() . '/assets/js/all.min.js', array(), mori_dynamic_version(), true );
+	wp_enqueue_script( 'mori-wp-custom', get_template_directory_uri() . '/assets/js/mori.js', array('jquery'), mori_dynamic_version(), true );
+
+	wp_enqueue_script( 'mori-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), mori_dynamic_version(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -182,3 +193,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Helper
+ */
+require get_template_directory() . '/inc/helper.php';
