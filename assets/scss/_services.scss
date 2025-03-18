@@ -1,0 +1,116 @@
+.service-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.services-swiper-slider {
+    &.swiper-slide {
+        padding: 0;
+    }
+}
+.serviceSlider {
+    .swiper-wrapper {
+        padding-bottom: 60px;
+    }
+}
+
+.services-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    @media(max-width:767px){
+        display: block;
+    }
+}
+
+.services-item {
+    position: relative;
+
+    &:hover {
+        .caption-box {
+            box-shadow: -3px 1px 10px 0px rgb(0 0 0 / 7%);
+        }
+    }
+ 
+    .caption-box {
+        background: #fff;
+        padding: 30px;
+        position: absolute;
+        width: 100%;
+        max-width: 390px;
+        height: 132px;
+        bottom: -38px;
+        left: 0px;
+        transition: 0.3s;
+        h3{
+            @include fontFamily($body_font, 22, $fw_bold, 30, $black2);
+        }
+        a{
+            font-family: $body_font;
+            font-size: 18px;
+            color:$text_color_4;
+        } 
+    }
+}
+
+.services-button {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 170px;
+    @media(max-width:1200px){
+        margin-top: 50px;
+        margin-left: 50px; 
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #191919;
+        background: transparent;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after { 
+        font-size: 18px;
+        color: #191919;
+    }
+
+    .swiper-button-next {
+        position: absolute;
+        right: auto;
+        left: 10%;
+        top: 50%;
+        @media(max-width:1200px){
+            left: 5%; 
+        }
+        @media(max-width:767px){
+            left: 15%; 
+        }
+        // @media(max-width:991px){
+        //     left: -13%;
+        // }
+    }
+
+    .swiper-button-prev {
+        position: absolute;
+        left: 0;
+        bottom: 41%;
+        right: auto;
+        // @media(max-width:1200px){
+        //     left: -13%;
+        // }
+        // @media(max-width:991px){
+        //     left: -28%;
+        // }
+    }
+}
+@media(max-width:1200px){
+.services-item{
+margin-top: 30px;
+}
+}

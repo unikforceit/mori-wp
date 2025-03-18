@@ -1,0 +1,273 @@
+/* 
+===============================
+Start Button Design
+===============================
+*/
+
+.thm-btn {
+  background: $button_color_2;
+  padding: 16px 52px;
+  position: relative;
+  color: $black;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid transparent;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  &:hover {
+    background: transparent;
+    border: 1px solid #cfcfcf;
+    color: $black;
+  }
+}
+
+.p_tag_btn {
+  display: block;
+  width: 132px;
+  height: 40px;
+  background-color: $primary_color;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.categories_btn {
+  display: block;
+  width: 114px;
+  height: 40px;
+  background-color: $primary_color;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.latest_news_btn {
+  display: block;
+  width: 127px;
+  height: 40px;
+  background-color: $primary_color;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.help_btn {
+  display: block;
+  width: 136px;
+  height: 40px;
+  background-color: $primary_color;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.contact_btn {
+  display: block;
+  width: 117px;
+  height: 47px;
+  background-color: $text_color_4;
+  text-align: center;
+  line-height: 47px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-weight: $fw_semi_bold;
+  color: #fff !important;
+}
+
+.form-btn {
+  display: block;
+  width: 193px;
+  height: 68px;
+  background-color: $primary_color;
+  text-align: center;
+  line-height: 68px;
+  border-radius: 6px;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: $fw_bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $menu_font_hover;
+    color: $heading_color !important;
+  }
+}
+
+.read_btn {
+  display: block;
+  background-color: transparent;
+  line-height: 42px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-family: $body_font;
+  color: $black2;
+  transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+
+  &:hover {
+
+  }
+}
+
+.more-about {
+  display: block;
+  width: 129px;
+  height: 42px;
+  background-color: $text_color_4;
+  text-align: center;
+  line-height: 42px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: $fw_semi_bold;
+  color: #fff !important;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary_color;
+  }
+}
+
+.btn-1 {
+  &.causes-btn {
+    background-color: transparent;
+    border: 1px solid $heading_color;
+    color: $heading_color !important;
+
+    &:hover {
+      border: 1px solid $primary_color;
+      color: #fff !important;
+    }
+  }
+
+  display: block;
+  width: 155px;
+  height: 60px;
+  background-color: $menu_font_hover;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: $fw_medium;
+  color: $heading_color !important;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary_color;
+    color: #fff !important;
+  }
+}
+
+.item-box-icon {
+  a {
+    display: block;
+    width: 128px;
+    height: 45px;
+    background-color: $text_color_4;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+    font-weight: $fw_medium;
+    text-transform: capitalize;
+    color: #fff;
+  }
+}
+
+.product-cart-btn,
+.product-cart a.add_to_cart_button,
+.product-cart a.button,
+.product-cart a.added_to_cart.wc-forward {
+  display: block;
+  width: 193px;
+  height: 60px;
+  background-color: $black2;
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: $fw_medium;
+  text-transform: capitalize;
+  color: #fff !important;
+  margin: 0 auto;
+  transition: all 500ms ease;
+  padding: 0;
+  overflow: hidden;
+  &:hover {
+    background-color: $white;
+    color: $black2 !important;
+  }
+
+}
+
+.product-cart a.added_to_cart.wc-forward {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: 2;
+}
+
+.cart-btn {
+  background: #272525;
+  padding: 14px 40px;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid transparent;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  &:hover {
+    background: transparent;
+    border: 1px solid #cfcfcf;
+    color: #272525;
+  }
+}
+
+.contact-btn {
+  padding-top: 20px;
+
+  a {
+    display: block;
+    width: 183px;
+    height: 61px;
+    background-color: $primary_color;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 61px;
+    font-size: 16px;
+    font-weight: $fw_semi_bold;
+    text-transform: capitalize;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $menu_font_hover;
+    }
+  }
+}
+
+/* 
+===============================
+End Button Design
+===============================
+*/

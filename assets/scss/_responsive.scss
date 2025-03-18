@@ -1,0 +1,606 @@
+/*********** Responsive CSS **************/
+
+@media screen and (min-width: 1600px) and (max-width:1800px) {
+    .banner-img {
+        left: 30px;
+        width: 550px;
+    }
+
+    .banner-1-graphic,
+    .banner-1-graphic {
+        left: 60px;
+    }
+
+    .company {
+        &::before {
+            left: 210px;
+        }
+    }
+
+    .shadow-bg {
+        &::before {
+            left: 150px;
+        }
+    }
+
+    .banner-3 {
+        &::before {
+            left: 70px;
+        }
+    }
+
+    .recentCampaigns {
+        .banner-1-graphic {
+            right: 60px;
+        }
+    }
+}
+
+@media screen and (min-width:1401px) and (max-width: 1599px) {
+    .banner-img {
+        left: 20px;
+        width: 100%;
+    }
+
+    .banner-1-graphic,
+    .banner-1-graphic {
+        left: 10px;
+    }
+
+    .company {
+        &::before {
+            left: 100px;
+        }
+    }
+
+    .shadow-bg {
+        &::before {
+            left: 80px;
+        }
+    }
+
+    .banner-3 {
+        &::before {
+            left: 0px;
+        }
+    }
+
+    .recentCampaigns {
+        .banner-1-graphic {
+            right: 0px;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) and (max-width: 1400px) {
+    .banner-img {
+        left: 0px;
+        width: 100%;
+    }
+
+    .banner-1-graphic,
+    .banner-1-graphic {
+        left: 5px;
+    }
+
+    .company {
+        &::before {
+            left: 30px;
+        }
+    }
+
+    .shadow-bg {
+        &::before {
+            left: 0px;
+        }
+    }
+
+    .banner-3 {
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .recentCampaigns {
+        .banner-1-graphic {
+            visibility: hidden;
+        }
+    }
+
+    .main-header .main-menu-2 {
+        padding: 30px 10px;
+    }
+}
+
+@media screen and (min-width:1167px) and (max-width: 1199px) {
+    .banner-img {
+        left: 0px;
+        width: 100%;
+    }
+
+    .company {
+        &::before {
+            left: 30px;
+        }
+    }
+
+    .shadow-bg {
+        &::before {
+            left: 0px;
+        }
+    }
+
+    .main-header .main-menu-2 {
+        padding: 30px 10px;
+    }
+}
+
+@media screen and (max-width: 1166px) {
+    .navigation-main-area ul {
+        display: flex;
+        column-gap: 0px;
+    }
+
+    .navigation-main-area li {
+        margin-left: 20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .main-header .main-menu-2 {
+        padding: 30px 10px;
+    }
+
+    // Top Header
+    .top-header-2 {
+        &::after {
+            width: 32%;
+            right: -20px;
+        }
+    }
+
+    .banner-img {
+        left: 0px;
+        width: 100%;
+    }
+
+    .company {
+        &::before {
+            left: 30px;
+        }
+    }
+
+    .shadow-bg {
+        &::before {
+            left: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .top-header {
+        display: none;
+    }
+
+    .main-header {
+        &.sticky-on {
+            padding: 10px 15px;
+        }
+    }
+
+    .menu-header {
+        .container {
+            padding: 0;
+        }
+
+        .main-menu {
+            position: relative;
+            top: 0;
+            padding: 15px 40px;
+        }
+    }
+
+    .mobile_menu_button {
+        display: block;
+    }
+
+    .navigation-main-area {
+        display: none;
+    }
+
+    .navigation-main-area ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    // Home 02
+    .grid-item {
+        flex: 0 0 32%;
+
+        &.grid-item-1 {
+            flex: 0 0 32%;
+            min-width: 32%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .grid-item-content {
+        transform: translateY(180px);
+    }
+
+    // Event Details
+    .ed-list {
+        li {
+            &::before {
+                top: 30%;
+            }
+        }
+    }
+
+    // Contact Page css
+    .contact-box {
+        padding: 30px 15px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .blog-sidebar {
+        padding-left: 0;
+    }
+
+    // Home 01
+    .banner-img {
+        text-align: center;
+        left: 0;
+        width: 100%;
+    }
+
+    .company {
+        &::before {
+            left: 0px;
+        }
+    }
+
+    .home-1-slider {
+        .swiperButton {
+            top: 60%;
+        }
+    }
+
+    // Event Details
+    .ed-list {
+        li {
+            &::before {
+                top: 50%;
+            }
+        }
+    }
+
+    // Contact Page css
+    .contact-box {
+        padding: 30px 40px;
+    }
+
+    .contact-form {
+        &:last-child {
+            padding-top: 0;
+        }
+    }
+
+    // Shop cart
+    .table-left-60 {
+        padding-left: 0 !important;
+    }
+
+    // Donation Css
+    .donate {
+        padding: 0;
+        margin-top: 0;
+        background-color: $primary_color;
+
+        .container {
+            .donate-wrap {
+                position: relative;
+                bottom: 0;
+            }
+        }
+    }
+
+    .donateContent {
+        h2 {
+            font-size: 28px;
+        }
+    }
+
+    .footer-widget.footer-nav {
+        margin-bottom: 40px;
+    }
+
+    .footer-widget.footer-about li {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    // Home page 01 (Our Blog Section)
+    .single-post {
+        .single-post-content {
+            padding: 0px 18px 30px;
+
+            span {
+                font-size: 14px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+
+    // Home page 02
+    .counter-box {
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .grid-item {
+        flex: 0 0 100%;
+
+        &.grid-item-1 {
+            flex: 0 0 100%;
+        }
+    }
+
+    //Event Details
+    .ed-DateLocation {
+        padding: 40px;
+
+        &::before {
+            left: 48%;
+        }
+    }
+
+    .ed-list {
+        li {
+            &::before {
+                top: 30%;
+            }
+        }
+    }
+
+    // Shop Dtails
+    .review-author {
+        flex: 0 0 20%;
+    }
+
+    .review-content {
+        flex: 0 0 70%;
+    }
+
+    .product-ddr-tab {
+        .nav-tabs {
+            gap: 0;
+            justify-content: space-between;
+        }
+    }
+
+    // Shop cart
+    .total-cost {
+        table {
+            tbody {
+                tr {
+                    td {
+                        &:last-child {
+                            width: initial;
+                        }
+                    }
+                }
+            }
+
+            th,
+            td {
+                &:last-child {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .menu-header .main-menu {
+        padding: 15px 1px;
+    }
+    .menu-right ul li {
+        padding: 0 7px;
+    }
+
+    // Donation Css
+    .donate {
+        .container {
+            .donate-wrap {
+                padding: 66px 35px;
+            }
+        }
+    }
+
+    .donateContent {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    // Footer Css
+    .footer-widget {
+        margin-bottom: 20px;
+    }
+
+    .footer_img {
+        opacity: 0;
+    }
+
+    .footer-author-2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo-col {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+
+    .menu-col {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+
+    .icon-col {
+        flex: 0 0 auto;
+        width: 60%;  
+    }
+
+    .pl-25 {
+        padding-left: 0px;
+    }
+
+    .section-title {
+        .sTitle-head {
+            font-size: 28px;
+        }
+    }
+
+    // Home page 01 (Our Blog Section)
+    .hero-content {
+        h3 {
+            font-size: 38px;
+        }
+    }
+
+    .single-post {
+        .single-post-content {
+            padding: 0px 18px 30px;
+
+            span {
+                font-size: inherit;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .about-content {
+        h3 {
+            font-size: 28px;
+        }
+    }
+
+    // Blog post
+    .blog-content {
+        .blog-left {
+            .thm-btn-share {
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+        }
+    }
+
+    //Event Details
+    .ed-DateLocation {
+        flex-direction: column;
+        gap: 40px;
+
+        &::before {
+            width: 90%;
+            height: 1px;
+        }
+    }
+
+    // Shop Details
+    .review-content {
+        flex: 0 0 70%;
+    }
+
+    .related-product-head .related-product-control {
+        bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .footer-author {
+        flex-direction: column;
+
+        .footer_logo {
+            padding-right: 0;
+            padding-bottom: 25px;
+            margin-right: 0;
+            margin-bottom: 25px;
+            border-right: 0;
+            border-bottom: 1px solid #17A28A;
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    // Event Details
+    .ed-quote {
+        padding: 207px 20px 40px;
+    }
+
+    // Shop Details
+    .product-ddr-tab {
+        .nav-tabs {
+            justify-content: space-between;
+
+            .nav-link {
+                padding: 0.5rem 0.4rem;
+            }
+        }
+    }
+
+    // Shop Details
+    .review-post-box {
+        flex-direction: column;
+    }
+
+    // Donation Css
+    .donateContent {
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    // Error page css
+    .error {
+        &_content {
+            p {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 345px) {}

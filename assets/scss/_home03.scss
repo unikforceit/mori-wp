@@ -1,0 +1,95 @@
+// Hero Banner 03
+.banner-3 {
+    padding-top: 170px;
+    position: relative;
+    background-color: $hero_banner;
+    &::before {
+        content: '';
+        position: absolute;
+        top: inherit;
+        bottom: -40px;
+        left: 120px;
+        width: 123px;
+        height: 123px;
+        background: url(../img/banner_3_path.png) no-repeat;
+        animation: footer_animation_2 10s infinite;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 83px;
+        right: 0;
+        width: 357px;
+        height: 400px;
+        background: url(../img/banner_3_graphic.png) no-repeat;
+        animation: footer_animation_2 10s infinite;
+    }
+    .banner-img {
+        z-index: 2;
+    }
+}
+
+.call-anytime {
+    position: absolute;
+    display: block;
+    top: 50%;
+    width: 250px;
+    height: 100px;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    box-shadow: 0 18px 30px #00000010;
+    .call-anytime-icon {
+        width: 72px;
+        height: 72px;
+        background-color: $primary_color;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 72px;
+        color: #fff;
+    }
+    .call-anytime-text {
+        h4 {
+            font-size: 16px;
+            font-weight: $fw_medium;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+}
+
+.shadow-bg {
+    position: relative;
+    padding-top: 70px;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 200px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 10px 30px #00000005;
+        z-index: -1;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 100%;
+        height: 156px;
+        background-color: #FEFAF1;
+        z-index: -2;
+    }
+}
+
+.ourBlog-3 {
+    padding-top: 76px;
+}

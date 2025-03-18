@@ -9,49 +9,52 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Mori_WP
+ * @package Mori
  */
 
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+    <!-- Start Blog Content -->
+    <main class="blog-content section-gap">
         <div class="container">
-            <?php
-            if ( have_posts() ) :
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <div class="blog-posts">
+                        <div class="row">
+                            <?php
+                            if (have_posts()) {
 
-                if ( is_home() && ! is_front_page() ) :
-                    ?>
-                    <header>
-                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                    </header>
-                    <?php
-                endif;
+                                /* Start the Loop */
+                                while (have_posts()) {
+                                    the_post();
 
-                /* Start the Loop */
-                while ( have_posts() ) :
-                    the_post();
+                                    /*
+                                    * Include the Post-Type-specific template for the content.
+                                    * If you want to override this in a child theme, then include a file
+                                    * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                                    */
+                                    get_template_part('template-parts/content', get_post_type());
+                                }
 
-                    /*
-                     * Include the Post-Type-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                     */
-                    get_template_part( 'template-parts/content', get_post_type() );
+                            } else {
 
-                endwhile;
+                                get_template_part('template-parts/content', 'none');
 
-                the_posts_navigation();
-
-            else :
-
-                get_template_part( 'template-parts/content', 'none' );
-
-            endif;
-            ?>
-        </div>
-	</main><!-- #main -->
-
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="pegination ul-li">
+                        <?php mori_pagination(); ?>
+                    </div>
+                </div>
+                <!-- Sidebar -->
+                <div class="col-lg-4 wow animate__fadeInUp" data-wow-duration="2s">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
+    </main>
 <?php
-get_sidebar();
 get_footer();

@@ -1,0 +1,74 @@
+// Contact Page css
+.contact-box {
+    padding: 30px 40px;
+    background-color: $primary_color;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    min-height: 148px;
+    &.contact-box-2 {
+        background-color: $text_color_4;
+        i {
+            color: $text_color_4;
+        }
+    }
+    &.contact-box-3 {
+        background-color: $menu_font_hover;
+        i {
+            color: $menu_font_hover;
+        }
+    }
+    &-icon {
+        min-width: 60px;
+        min-height: 60px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+        i {
+            color: $primary_color;
+        }
+    }
+    &-text {
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 66px;
+            background-color: #fff;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        h4 {
+            font-size: inherit;
+            font-weight: $fw_semi_bold;
+            color: #fff;
+            text-transform: capitalize;
+            padding-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #fff;
+        }
+    }
+}
+
+// Contact Form
+.contact-form {
+    padding-top: 30px;
+}
+
+.contact-map {
+    position: relative;
+    top: 120px;
+}
+
+.map-frame {
+    height: 768px;
+}

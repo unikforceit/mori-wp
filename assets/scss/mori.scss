@@ -1,0 +1,189 @@
+// Mixins
+@function toRem($value) {
+  @return ($value / 16) + rem;
+}
+
+@mixin fontFamily($fontFamily,$fontSize,$fontWeight,$lineHeight,$color) {
+  font-family: $fontFamily;
+  font-size: toRem($fontSize);
+  font-weight: $fontWeight;
+  line-height: toRem($lineHeight);
+  color: $color;
+}
+
+@mixin d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*global variable*/
+@import "variable";
+
+
+/*global area*/
+
+/*----------------------------------------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: $body_font;
+  font-size: $body_font_size;
+  font-weight: $body_font_weight;
+  color: $body_text_color;
+  background-color: #fff;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+// .container {
+//   max-width: toRem(1410);
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  font-size: $body_font_size;
+  margin: 0;
+}
+
+.ul-li {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+  }
+}
+
+[data-background] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.form-control:focus,
+button:visited,
+button.active,
+button:hover,
+button:focus,
+input:visited,
+input.active,
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus,
+a:hover,
+a:focus,
+a.active,
+select,
+select:hover,
+select:focus,
+select:visited {
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+// row gap
+.row {
+  row-gap: toRem(30);
+}
+
+// Preloader css
+@import "preloader";
+// Scroll To Top css
+@import "scroll-to-top";
+// Header css
+@import "_header";
+@import "_n_top_header";
+@import "_n_bottom_header";
+// Button css
+@import "_button";
+// Common css
+@import "_common";
+// Home page 01 css
+@import "_home01";
+// Home page 02 css
+@import "_home02";
+// Home page 03 css
+@import "_home03";
+// About page css
+@import "_about";
+// Team page css
+@import "_team";
+// Cart page css
+@import "_cart";
+// Cases Details page css
+@import "_cases-details";
+// Blog Page css
+@import "_blog";
+// Blog Details Page css
+@import "_blog-details";
+// Event Details Page css
+@import "_event-details";
+// Vlounteer Details Page css
+@import "_vlounteer-details";
+// Shop Details Page css
+@import "_shop-details";
+// Shop Details Page css
+@import "_sidebar";
+// Product Page css
+@import "_product";
+// services css
+@import "_services";
+// Counter Page css
+@import "_counter";
+// Checkout Page css
+@import "_checkout";
+// Contact Page css
+@import "_contact";
+// FAQ Page css
+@import "_faq";
+// Error Page css
+@import "_error";
+// Modal Page css
+@import "_modal";
+// newsletter Page css
+@import "_newsletter";
+// search Page css
+@import "_search-popup";
+// Footer css
+@import "_footer";
+// Responsive css
+@import "_responsive";
+/* WP custom css */
+@import "_wp_custom";

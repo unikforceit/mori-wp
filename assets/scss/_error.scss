@@ -1,0 +1,18 @@
+// Error page css
+.error {
+    padding-bottom: 40px;
+    &_img {
+        padding-bottom: 70px;
+    }
+    &_content {
+        h3 {
+            font-size: 34px;
+            font-weight: $fw_semi_bold;
+        }
+        p {
+            padding: 25px 0;
+            width: 416px;
+            margin: 0 auto;
+        }
+    }
+}
