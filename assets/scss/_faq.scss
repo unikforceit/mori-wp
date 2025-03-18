@@ -1,0 +1,62 @@
+// FAQ page css
+.faq {
+    margin-bottom: 20px;
+    .accordion-item {
+        margin-bottom: 20px;
+        border: 0;
+        background-color: #D9EAE7;
+        background-size: contain;
+    }
+    .accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+        font-size: 18px;
+        font-weight: $fw_semi_bold;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, border-radius .15s ease;
+        cursor: pointer;
+        &.collapsed {
+            background-color: $primary_color;
+            border-radius: 5px;
+        }
+        &:not(.collapsed) {
+            background-color: transparent;
+            color: $heading_color;
+            box-shadow: none;
+        }
+        &:not(.collapsed)::after {
+            background-image: none;
+            content: '\f068';
+            font-family: "Font Awesome 5 Free";
+        }
+        &::after {
+            background-image: none;
+            content: '\f107';
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+    .accordion-body {
+        font-size: 16px;
+        border-radius: 0 0 5px 5px;
+        color: $heading_color;
+        padding: 25px 20px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 515px;
+            height: 1px;
+            background-color: $body_text_color;
+        }
+        span {
+            display: block;
+            text-align: justify;
+        }
+    }
+}

@@ -1,0 +1,126 @@
+// Cases Details 
+.notice {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid $seperate;
+    border-radius: 5px;
+    padding: 12px 0 12px 20px;
+    margin-bottom: 20px;
+    i {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        background-color: $menu_font_hover;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 36px;
+        color: #fff;
+    }
+    p {
+        display: inline;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+}
+
+// Choose amount
+.choose-amount {
+    form {
+        width: 184px;
+        padding-bottom: 20px;
+        .input-group {
+            border: 1px solid #D1E2DF;
+            border-radius: 5px;
+        }
+        .input-group-text {
+            height: 55px;
+            padding: 26px;
+            font-size: 22px;
+            font-weight: $fw_semi_bold;
+            background-color: #D1E2DF;
+            border-radius: 5px;
+        }
+        input {
+            height: 55px;
+            font-size: 18px;
+            font-weight: $fw_semi_bold;
+            border: 0;
+        }
+    }
+    ul {
+        li {
+            &.active,
+            &:hover {
+                background-color: $primary_color;
+                color: #fff;
+            }
+            padding: 10px 31px 10px 22px;
+            border-radius: 5px;
+            background-color: #D1E2DF;
+            margin-right: 14px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+             :last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// Select Payment Method
+.payment-method {
+    padding-bottom: 40px;
+    label {
+        font-size: 16px;
+        font-weight: $fw_medium;
+        color: $heading_color;
+    }
+}
+
+.payment-button {
+    display: flex;
+    gap: 20px;
+}
+
+// Personal Info
+.personal-info {
+    background-color: #fff;
+    border: 1px solid $seperate;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px #00000005;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.personal-text {
+    padding-bottom: 40px;
+    p,
+    ol,
+    address {
+        font-size: 16px;
+        padding-bottom: 20px;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    ol {
+        padding-left: 20px;
+    }
+}
+
+.total-donation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    h4 {
+        font-size: 16px;
+        font-weight: $fw_semi_bold;
+        color: $heading_color;
+        text-transform: capitalize;
+        padding: 20px 40px 20px 30px;
+        border: 1px solid $seperate;
+        border-radius: 5px;
+        margin-bottom: 0;
+    }
+}

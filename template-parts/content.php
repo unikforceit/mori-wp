@@ -4,60 +4,29 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Mori_WP
+ * @package Mori
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				mori_wp_posted_on();
-				mori_wp_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php mori_wp_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'mori-wp' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mori-wp' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php mori_wp_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6'); ?>>
+    <div class="blog-post-item d-flex flex-column">
+        <?php
+            if (has_post_thumbnail()) { ?>
+                <div class="thumbImg">
+                    <a href="<?php the_permalink();?>">
+                        <?php the_post_thumbnail('full'); ?>
+                    </a>
+                </div>
+        <?php } ?>
+        <div class="content">
+            <div class="post-dca">
+                <ul>
+                    <li><a href="#"> <?php the_date('M j, Y'); ?></a></li>
+                </ul>
+            </div>
+            <a class="title" href="<?php the_permalink();?>"><?php the_title();?></a>
+            <p class="excerpt"><?php echo wp_trim_words(get_the_excerpt(), 12, '');?></p>
+            <a href="<?php the_permalink();?>" class="permaLink"><?php esc_html_e('Read More', 'mori');?></a>
+        </div>
+    </div>
+</div>

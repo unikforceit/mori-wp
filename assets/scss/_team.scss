@@ -1,0 +1,110 @@
+.team-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-top: 30px;
+
+    .team-thumb {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .overlay-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 9;
+            opacity: 1;
+            visibility: hidden;
+            transition: all 500ms ease;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                background: $black2;
+                opacity: 0.3;
+                content: "";
+            }
+
+            .team-social-icon {
+                position: absolute;
+                bottom: -14%;
+                text-align: center;
+                width: 100%;
+                max-width: auto;
+                transition: all 0.5s ease 0s;
+                opacity: 0;
+                visibility: hidden;
+                display: flex;
+                justify-content: center;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        display: inline-block;
+
+                        a {
+                            width: 45px;
+                            height: 45px;
+                            line-height: 45px;
+                            background: $white;
+                            padding: 14px;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &:hover {
+
+            .overlay-box {
+                opacity: 1;
+                visibility: visible;
+                transition-delay: 200ms;
+
+                .team-social-icon {
+                    bottom: 14%;
+                    opacity: 1;
+                    visibility: visible;
+
+
+                }
+            }
+        }
+    }
+
+
+
+    .team-content {
+        margin-top: 25px;
+
+        a {
+            font-family: $body_font;
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            color: $black2;
+            margin-bottom: 10px;
+        }
+        p{
+            font-family: $poppins;
+            font-size: 16px;
+            font-weight: 500; 
+            color: $orange2;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 18px;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.counter-section {
+    position: relative; 
+    overflow: hidden;
+}
+
+.countdown {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 27px;
+    margin-top: 40px;
+
+
+}
+
+.counter-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 27px;
+}
+
+.countdown-item {
+    .countdown-number {
+        font-size: 40px;
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 700;
+        line-height: 34px;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #191919;
+        width: 90px;
+        height: 62px;
+    }
+    .countdown-text {
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+        text-align: center;
+        background: rgb(231, 159, 126);
+        width: 90px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.counter-content {
+    padding: 60px;
+    background-repeat: no-repeat;
+}
+
+.sec-line {
+    background: $orange2;
+    width: 78px;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+.sec-title {
+    h2 {
+        font-size: 20px;
+        font-family: $body_font;
+        font-weight: 500;
+        line-height: 24px;
+        color: $black2;
+        margin-bottom: 15px;
+    }
+}
+
+.price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    h4 {
+        font-size: 20px;
+        font-family: $body_font;
+        font-weight: 500;
+        line-height: 24px;
+        color: $orange2;
+
+        del {
+            color: #c2c2c2;
+        }
+    }
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 27px;
+    margin: 40px 0; 
+
+    .counter {
+        background: $black2;
+        width: 90px;
+        height: 90px;
+        p{
+            font-size: 40px;
+            font-family: $body_font;
+            font-weight: 700;
+            line-height: 34px;
+            color: $white;
+            padding:15px 25px;
+        }
+        .smalltext{
+            font-size: 14px;
+            font-family: $poppins;
+            color: $white;
+            background: $orange2;
+            padding:10px 20px;
+            text-align:center;
+    }
+}
+}
