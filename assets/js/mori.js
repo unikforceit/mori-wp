@@ -18,15 +18,11 @@ Last change:    00/00/00
                 this.preloader();
                 this.BackgroundImage();
                 this.MobileMenu();
-                this.searchPopup();
-                this.SidebarMenu();
                 this.cartModal();
                 this.scrollTop();
                 this.Animation();
                 this.Niceselect();
                 this.Tools();
-                this.RelatedSlider();
-
             },
             preloader: function () {
                 $(window).on('load', function () {
@@ -49,15 +45,6 @@ Last change:    00/00/00
                 });
                 wow.init();
             },
-            //  Menu inner search
-            searchPopup: function () {
-                $('.search-trigger').on('click', function () {
-                    $('.search-popup').addClass('open')
-                });
-                $('.close-trigger').on('click', function () {
-                    $('.search-popup').removeClass('open')
-                });
-            },
             MobileMenu: function () {
                 jQuery(window).on('scroll', function () {
                     if (jQuery(window).scrollTop() > 250) {
@@ -76,15 +63,6 @@ Last change:    00/00/00
                     $('.mobile_menu li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>');
                     $('.mobile_menu li.dropdown .dropdown-btn').on('click', function () {
                         $(this).prev('ul').slideToggle(500);
-                    });
-                }
-            },
-            SidebarMenu: function () {
-                if ($('.sidebar_dropdown').length) {
-                    $('.sidebar_dropdown').append('<div class="sidebar-dropdown-btn"><span class="fas fa-plus"></span></div>');
-                    $('.sidebar-dropdown-btn').on('click', function () {
-                        $(this).prev('ul').slideToggle(500);
-                        $(this).html($(this).html() == '<span class="fas fa-plus"></span>' ? '<span class="fas fa-minus"></span>' : '<span class="fas fa-plus"></span>');
                     });
                 }
             },
@@ -119,24 +97,6 @@ Last change:    00/00/00
             },
             Niceselect: function () {
                 $('select').niceSelect();
-            },
-            RelatedSlider: function (){
-                var swiper = new Swiper(".blogSlider2", {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                    autoplay: false,
-                    loop: true,
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    breakpoints: {
-                        991: {
-                            slidesPerView: 2,
-                            spaceBetween: 30,
-                        },
-                    },
-                });
             },
             scrollTop: function () {
                 $(window).on("scroll", function () {

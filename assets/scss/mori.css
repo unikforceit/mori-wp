@@ -380,40 +380,6 @@ select:visited {
     transform: translateY(-15px);
   }
 }
-/*** Start Top Header ***/
-.top-header {
-  height: 3.4375rem;
-  line-height: 3.4375rem;
-  padding: 0px 3.1875rem;
-  z-index: 11;
-  position: relative;
-}
-
-.topCurrencyLang .nice-select {
-  background: none;
-  border: none;
-}
-.topCurrencyLang .nice-select .current {
-  color: #fff;
-}
-.topCurrencyLang .nice-select::after {
-  border-color: #fff;
-  top: 45%;
-}
-.topCurrencyLang .nice-select .list {
-  width: 100%;
-  z-index: 9;
-}
-.topCurrencyLang .nice-select .option.selected {
-  color: #212121 !important;
-  background: #212121 !important;
-}
-.topCurrencyLang .nice-select .option.selected.focus {
-  color: #fff !important;
-  background: #212121 !important;
-}
-
-/*** End Top Header ***/
 /* Start Sticky */
 .main-header {
   position: relative;
@@ -454,14 +420,15 @@ select:visited {
 
 /* End Sticky */
 /*** Start Main Header ***/
+.menu-header {
+  background: #F5F5F5;
+}
 .menu-header .container {
   position: relative;
 }
 .menu-header .main-menu {
   z-index: 10;
   width: 100%;
-  background-color: #ffffff;
-  padding: 20px 40px;
 }
 
 .main-header .main-menu-2 {
@@ -849,8 +816,8 @@ select:visited {
   line-height: 2.5rem;
 }
 
-.bottom-bar-area {
-  padding: 20px 40px;
+.bottom-bar-area .header-right-buttons {
+  display: flex;
 }
 
 /* 
@@ -859,10 +826,10 @@ Start Button Design
 ===============================
 */
 .thm-btn {
-  background: #272525;
+  background: #CDD6E5;
   padding: 16px 52px;
   position: relative;
-  color: #fff;
+  color: #000000;
   z-index: 1;
   overflow: hidden;
   border: 1px solid transparent;
@@ -873,77 +840,7 @@ Start Button Design
 .thm-btn:hover {
   background: transparent;
   border: 1px solid #cfcfcf;
-  color: #272525;
-}
-
-.causes-btn a {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  color: #fff;
-  width: 138px;
-  font-weight: 700;
-  height: 55px;
-  background-color: #00715D;
-  display: inline-block;
-  text-align: center;
-  border-radius: 5px;
-  line-height: 55px;
-  text-transform: capitalize;
-  transition: all 0.3s ease-in-out;
-}
-.causes-btn a:hover {
-  background-color: #CDD6E5;
-  color: #232323;
-}
-
-.donate_btn {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  color: #232323 !important;
-  width: 134px;
-  font-weight: 600;
-  height: 55px;
-  background-color: #CDD6E5;
-  border: 1px solid #CDD6E5;
-  display: inline-block;
-  text-align: center;
-  border-radius: 5px;
-  line-height: 55px;
-  text-transform: capitalize;
-  transition: all 0.3s ease-in-out;
-}
-.donate_btn.donate_btn_2 {
-  background-color: #e59d73;
-  color: #fff !important;
-  border: 1px solid #e59d73;
-}
-.donate_btn.donate_btn_2:hover {
-  border: 1px solid #00715D;
-}
-.donate_btn:hover {
-  background-color: #00715D;
-  color: #fff !important;
-  border: 1px solid #fff;
-}
-
-.donate_btn-2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  color: #fff;
-  width: 160px;
-  font-weight: 600;
-  height: 60px;
-  background-color: #00715D;
-  display: inline-block;
-  text-align: center;
-  border-radius: 5px;
-  line-height: 60px;
-  text-transform: capitalize;
-  transition: all 0.3s ease-in-out;
-}
-.donate_btn-2:hover {
-  background-color: #CDD6E5;
-  color: #232323 !important;
+  color: #000000;
 }
 
 .p_tag_btn {
@@ -1009,17 +906,6 @@ Start Button Design
   text-transform: capitalize;
   font-weight: 600;
   color: #fff !important;
-}
-
-.volunteer_btn {
-  display: block;
-  background-color: rgba(231, 159, 126, 0.1);
-  text-align: center;
-  padding: 18px 33px;
-  text-transform: capitalize;
-  font-size: 18px;
-  color: #212121;
-  margin: 30px 0;
 }
 
 .form-btn {

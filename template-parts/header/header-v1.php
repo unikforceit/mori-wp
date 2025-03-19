@@ -116,7 +116,7 @@
         </div>
         <div class="bottom-bar-area">
             <div class="row justify-content-between align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                 <!--Main Menu-->
                 <div class="main-menu-navigation">
                     <nav class="navigation-main-area ul-li">
@@ -168,7 +168,7 @@
                 </div>
                 <!-- End Mobile Menu -->
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                 <div class="search-wrapper">
                     <div class="inner">
                         <form id="searchform" class="searchbox search-form" action="<?php echo home_url('/');?>"  method="get">
@@ -179,6 +179,16 @@
                         </form>
                     </div>
                 </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header-right-buttons">
+                        <div class="mori-button">
+                            <a class="thm-btn" href="#">Webshop</a>
+                        </div>
+                        <div class="mori-button-outline">
+                            <a class="thm-btn" href="#">Trainingen</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,88 +208,3 @@
             </div>
         </div>
     </div>
-
-    <!-- right side nav start  -->
-    <div class="right-overlaly"></div>
-    <div class="right-side-nav">
-        <div class="nav-wraper">
-            <div class="sidemenu-wrapper">
-                <div class="sidemenu-icon">
-                    <ul>
-                        <li><a href="#" class="nav-close-btn"><i><img src="assets/img/icon/remove.png" alt=""></i></a>
-                        </li>
-                        <li><a href="#"><i><img src="./assets/img/icon/nav.png" alt=""></i></a></li>
-                        <li><a class="cart-open" href="#"><i><img src="./assets/img/icon/shopping-bag-white.png"
-                                                                  alt=""></i><span>01</span></a>
-                        </li>
-                        <li><a href="wishlist.html"><i><img src="./assets/img/icon/heart-white.png"
-                                                            alt=""></i><span>01</span></a>
-                        </li>
-                        <li class="active"><a href="my-account.html"><i><img src="./assets/img/icon/user-white.png"
-                                                                             alt=""></i></a>
-                        </li>
-                        <li><a href="wishlist.html"><i><img src="./assets/img/icon/call.png"></i></a></li>
-                    </ul>
-                    <div class="follow-us">
-                        <ul>
-                            <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sidemenu-content">
-                    <h3>Login In</h3>
-                    <div class="side-line"></div>
-                    <div class="side-button">
-                        <a href="#" class="login-btn"><i><img src="assets/img/icon/google.png" alt=""></i>Login with
-                            Google</a>
-                        <a href="#" class="active login-btn"><i><img src="assets/img/icon/fackbook.png" alt=""></i>Login
-                            with Facebook</a>
-                    </div>
-                    <form>
-                        <div class="input-group">
-                            <input type="text" placeholder="Email Address *">
-                        </div>
-                        <div class="input-group">
-                            <input type="password" placeholder="Enter Password *">
-                            <span><i class="fa fa-eye-slash"></i></span>
-                        </div>
-                    </form>
-                    <div class="side-button">
-                        <a href="#" class="login-btn"><i></i>Login In</a>
-                        <a href="#" class="login-btn"><i></i>Sign Up</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- right side nav  end-->
-
-    <!-- Modal start -->
-    <div class="modal modal-section fade" id="myModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-wraper">
-                        <div class="modal-thumb">
-                            <img src="assets/img/other/modal.png" alt="">
-                        </div>
-                        <div class="modal-content-wrapper">
-                            <div class="content-wraper">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                <div class="news-letter-form">
-                                    <h3>Our Newsletter</h3>
-                                </div>
-                                <p>Subscribe to the Mori Store get notified about exclusive offers every week! </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal start end-->
