@@ -52,7 +52,7 @@ get_header();
                 </div>
                 <!-- Sidebar -->
                 <div class="col-lg-4 wow animate__fadeInUp" data-wow-duration="2s">
-                    <?php get_sidebar(); ?>
+                    <?php get_sidebar('sidebar-1'); ?>
                 </div>
             </div>
     </main>

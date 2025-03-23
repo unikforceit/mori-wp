@@ -413,3 +413,26 @@ function mori_dynamic_version() {
     $timestamp = time();
     return $version.'_time_'.$timestamp;
 }
+
+function mori_theme_options($opt)
+{
+    $options = get_option('_mori');
+    if (isset($options[$opt])) {
+        return $options[$opt];
+    }
+}
+
+function mori_theme_page_meta($opt)
+{
+    $options = get_post_meta(get_the_ID(), '_mori_meta', true);
+    if (isset($options[$opt])) {
+        return $options[$opt];
+    }
+}
+
+function mori_translated_text($text)
+{
+    if (!empty($text)) {
+        _e($text, 'mori');
+    }
+}

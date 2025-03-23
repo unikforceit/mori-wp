@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.0.1
+ * @version 7.9.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -25,7 +25,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
 			<tr>
-<!--				<th class="product-thumbnail"><span class="screen-reader-text">--><?php //esc_html_e( 'Thumbnail image', 'woocommerce' ); ?><!--</span></th>-->
 				<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 				<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
 				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
@@ -45,10 +44,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-<!--						<td class="product-thumbnail">-->
-<!--						-->
-<!--						</td>-->
 
 						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
                             <?php

@@ -1,5 +1,37 @@
 .bottom-bar-area {
+  padding: 10px 0;
+  background: $white;
   .header-right-buttons {
     display: flex;
+    flex-wrap: wrap;
+    column-gap: toRem(12);
+    justify-content: flex-end;
+  }
+
+  .navigation-main-area {
+    li a {
+      font-size: toRem(16);
+    }
+    .dropdown .dropdown-menu li a {
+      font-size: toRem(16);
+    }
+  }
+  .search-wrapper {
+    position: relative;
+  }
+  .search-wrapper input {
+    width: 100%;
+    background: #F2F2F2;
+    border-radius: 23px;
+    height: 45px;
+    padding: 10px 30px;
+  }
+  span.search-button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  @media screen and (max-width: 1024px) {
+    display: none;
   }
 }

@@ -5,21 +5,21 @@ Start Button Design
 */
 
 .thm-btn {
-  background: $button_color_2;
-  padding: 16px 52px;
+  background: $white;
+  padding: 10px 20px;
   position: relative;
   color: $black;
   z-index: 1;
   overflow: hidden;
-  border: 1px solid transparent;
+  border: 1px solid #716032;
   outline: none;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: toRem(24);
+  font-size: toRem(18);
 
   &:hover {
-    background: transparent;
-    border: 1px solid #cfcfcf;
-    color: $black;
+    background: $button_color_2;
+    border: 1px solid $button_color_2;
   }
 }
 

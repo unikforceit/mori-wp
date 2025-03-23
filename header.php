@@ -8,6 +8,9 @@
  *
  * @package Mori
  */
+
+$preloader = mori_theme_options('enb_pre');
+$scrolltop = mori_theme_options('enb_scroll');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -19,7 +22,7 @@
     </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-    <!-- Preloader
+    <?php if ($preloader){?>
         <div class="preloader">
             <div class="vertical-centered-box">
                 <div class="content">
@@ -31,12 +34,13 @@
                 </div>
             </div>
         </div>
-    -->
+    <?php } ?>
+<?php if ($scrolltop){?>
     <!-- Scroll -->
     <div class="scroll-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-
+<?php } ?>
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'mori'); ?></a>
 <?php
     get_template_part('template-parts/header/header', 'v1');

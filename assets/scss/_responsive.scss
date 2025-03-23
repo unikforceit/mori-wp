@@ -184,13 +184,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .top-header {
-        display: none;
-    }
 
     .main-header {
         &.sticky-on {
-            padding: 10px 15px;
         }
     }
 
@@ -203,6 +199,11 @@
             position: relative;
             top: 0;
             padding: 15px 40px;
+        }
+        &.middle-header{
+            .navigation-main-area{
+                display: none;
+            }
         }
     }
 

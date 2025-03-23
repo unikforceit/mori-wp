@@ -32,7 +32,7 @@ body {
   font-size: $body_font_size;
   font-weight: $body_font_weight;
   color: $body_text_color;
-  background-color: #fff;
+  background-color: $section_bg;
   line-height: 1.5;
   -moz-osx-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -49,6 +49,7 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font-family: $heading_font;
 }
 
 p {

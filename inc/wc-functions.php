@@ -158,3 +158,128 @@ function mori_woocommerce_products_load_more(){
     echo '</div>';
 
 }
+
+// Add Mori Options Tab to WooCommerce Settings
+function add_mori_options_tab( $sections ) {
+    $sections['mori_options'] = __( 'Mori Options', 'woocommerce' );
+    return $sections;
+}
+add_filter( 'woocommerce_get_sections_products', 'add_mori_options_tab' );
+
+// Add Mori Options fields to the custom tab
+function add_mori_options_fields( $settings, $current_section ) {
+    if ( $current_section == 'mori_options' ) {
+        $mori_settings = [];
+
+        $mori_settings[] = array(
+            'name' => __( 'Mori Options', 'woocommerce' ),
+            'type' => 'title',
+            'desc' => __( 'The following options are used to configure mori woocommerce', 'woocommerce' ),
+            'id' => 'mori_options'
+        );
+
+        $mori_settings[] = array(
+            'title'    => __( 'Product Per Page', 'woocommerce' ),
+            'desc'     => __( 'Customize product display settings for Mori theme.', 'woocommerce' ),
+            'id'       => 'mori_product_per_page',
+            'default'  => 12,
+            'type'     => 'number',
+            'desc_tip' => true,
+            'label'    => __( 'Products per page', 'woocommerce' ),
+        );
+
+        $mori_settings[] = array(
+            'title'    => __( 'Products per Row', 'woocommerce' ),
+            'desc'     => __( 'Number of products per row in product archive pages.', 'woocommerce' ),
+            'id'       => 'mori_products_per_row',
+            'default'  => 4,
+            'type'     => 'number',
+            'desc_tip' => true,
+            'label'    => __( 'Products per Row', 'woocommerce' ),
+        );
+
+        // Register page selection
+        $mori_settings[] = array(
+            'title'    => __( 'Register Page', 'woocommerce' ),
+            'desc'     => __( 'Select a page for the register page.', 'woocommerce' ),
+            'id'       => 'mori_register_page',
+            'default'  => '',
+            'type'     => 'single_select_page',
+            'desc_tip' => true,
+        );
+        $mori_settings[] = array( 'type' => 'sectionend', 'id' => 'mori_options' );
+        return $mori_settings;
+    } else {
+        return $settings;
+    }
+}
+add_filter( 'woocommerce_get_settings_products', 'add_mori_options_fields', 10, 2 );
+
+
+// Modify the number of products per page
+function mori_products_per_page( $cols ) {
+    $products_per_page = get_option( 'mori_product_per_page', 12 ); // Default to 12 if not set
+    return $products_per_page;
+}
+add_filter( 'loop_shop_per_page', 'mori_products_per_page', 20 );
+
+// Modify the number of products per row
+function mori_products_per_row( $columns ) {
+    $products_per_row = get_option( 'mori_products_per_row', 4 ); // Default to 4 if not set
+    return $products_per_row;
+}
+add_filter( 'woocommerce_loop_columns', 'mori_products_per_row', 20 );
+
+// Check if current page is the register page and inject the registration form
+function embed_registration_form_on_page( $content ) {
+    // Get the custom register page ID from settings
+    $register_page_id = get_option( 'mori_register_page' );
+
+    // Check if we're on the correct page and the register page is selected
+    if ( is_page( $register_page_id ) ) {
+        // Ensure we're not logged in and it's the registration page
+        if ( ! is_user_logged_in() ) {
+            // Load the register form from the form-registration.php template
+            ob_start();
+            wc_get_template_part( 'myaccount/form-registration' ); // This loads the form-registration.php
+            $content .= ob_get_clean(); // Append the registration form to the page content
+        } else {
+            // Optionally, redirect logged-in users or show a message
+            $content .= '<p>' . esc_html__( 'You are already logged in.', 'woocommerce' ) . '</p>';
+        }
+    }
+    return $content;
+}
+add_filter( 'the_content', 'embed_registration_form_on_page' );
+
+// Redirect logged-in users to the account page
+function redirect_logged_in_users_from_register_page() {
+    if ( is_page( get_option( 'mori_register_page' ) ) && is_user_logged_in() ) {
+        wp_redirect( wc_get_account_endpoint_url('') ); // Redirect to My Account page
+        exit;
+    }
+}
+add_action( 'template_redirect', 'redirect_logged_in_users_from_register_page' );
+
+add_action( 'woocommerce_created_customer', 'save_custom_registration_fields' );
+
+function save_custom_registration_fields( $customer_id ) {
+    if ( isset( $_POST['first_name'] ) ) {
+        update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
+    }
+    if ( isset( $_POST['last_name'] ) ) {
+        update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
+    }
+    if ( isset( $_POST['company_name'] ) ) {
+        update_user_meta( $customer_id, 'company_name', sanitize_text_field( $_POST['company_name'] ) );
+    }
+    if ( isset( $_POST['chamber_of_commerce'] ) ) {
+        update_user_meta( $customer_id, 'chamber_of_commerce', sanitize_text_field( $_POST['chamber_of_commerce'] ) );
+    }
+    if ( isset( $_POST['vat_number'] ) ) {
+        update_user_meta( $customer_id, 'vat_number', sanitize_text_field( $_POST['vat_number'] ) );
+    }
+    if ( isset( $_POST['phone'] ) ) {
+        update_user_meta( $customer_id, 'phone', sanitize_text_field( $_POST['phone'] ) );
+    }
+}

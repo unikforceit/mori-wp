@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.6.0
+ * @version 9.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<<?php if(is_shop() || is_product()){echo "li";}else{echo "div";};?> <?php wc_product_class( '', $product ); ?>>
+<li <?php wc_product_class( '', $product ); ?>>
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
@@ -64,4 +64,4 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-</<?php if(is_shop() || is_product()){echo "li";}else{echo "div";};?>>
+</li>

@@ -1,4 +1,5 @@
 $body_font: 'Poppins', sans-serif;
+$heading_font: "Inter", sans-serif;
 $body_font_size: toRem(16);
 $body_text_color: #717171;
 $body_font_weight: 400;
@@ -40,7 +41,7 @@ $logo_color: #52BCE6;
 $author_color: #a3a8af;
 $author_font_size: toRem(16);
 $button_color_2: #CDD6E5;
-$section_bg: #f0f4f7;
+$section_bg: #F1ECE3;
 $primary_solid: #5693BF;
 
 // Background
@@ -56,7 +57,7 @@ $primary_solid: #5693BF;
 // Menu css
 $main_menu_bg: $white;
 $main_menu_sticky_bg: #fff;  
-$menu_font_size: toRem(16); 
+$menu_font_size: toRem(12);
 $menu_font_color: #212121;
 $menu_font_hover: #CDD6E5;
 $sticky_dropdown_position: toRem(38);

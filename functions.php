@@ -56,7 +56,9 @@ if (!function_exists('mori_setup')) :
         register_nav_menus(
             array(
                 'primary' => esc_html__('Primary', 'mori'),
-                'account' => esc_html__('Account', 'mori'),
+                'shop' => esc_html__('Shop', 'mori'),
+                'copyright' => esc_html__('Copyright Menu', 'mori'),
+                'footer' => esc_html__('Footer Menu', 'mori'),
             )
         );
 
@@ -138,8 +140,19 @@ function mori_widgets_init()
             'description' => esc_html__('Add widgets here.', 'mori'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<div class="widget-head">
-                                <h3>',
+            'before_title' => '<div class="widget-head"><h3>',
+            'after_title' => '</h3></div>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => esc_html__('Footer', 'mori'),
+            'id' => 'footer',
+            'description' => esc_html__('Add widgets here.', 'mori'),
+            'before_widget' => '<div class="col-lg-3"><div id="%1$s" class="footer-widget %2$s">',
+            'after_widget' => '</div></div>',
+            'before_title' => '<div class="footer-widget-head"><h3>',
             'after_title' => '</h3></div>',
         )
     );
@@ -161,6 +174,9 @@ function mori_fonts_url() {
     // Check if 'Poppins' is enabled
     if ('off' !== esc_html_x('on', 'Poppins font: on or off', 'mori')) {
         $fonts[] = 'Poppins:400,500,600,700,900';
+    }
+    if ('off' !== esc_html_x('on', 'Inter font: on or off', 'mori')) {
+        $fonts[] = 'Inter:400,500,600,700,900';
     }
 
     // If we have fonts to load, build the URL
@@ -240,6 +256,9 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/class-walker-comment.php';
 
 require get_template_directory() . '/inc/plugins.php';
+// Widgets
+require get_template_directory() . '/inc/widgets/about-mori.php';
+require get_template_directory() . '/inc/widgets/mori-contact.php';
 
 if (class_exists('WooCommerce')){
     require get_template_directory() . '/inc/wc-functions.php';

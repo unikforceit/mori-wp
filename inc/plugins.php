@@ -73,7 +73,7 @@ function mori_register_required_plugins()
         array(
             'name'      => 'WooCommerce',
             'slug'      => 'woocommerce',
-            'required'  => false,
+            'required'  => true,
         )
     );
 
