@@ -23,6 +23,7 @@ Last change:    00/00/00
                 this.Animation();
                 this.Niceselect();
                 this.Tools();
+                this.searchPopup();
             },
             preloader: function () {
                 $(window).on('load', function () {
@@ -45,6 +46,17 @@ Last change:    00/00/00
                 });
                 wow.init();
             },
+            //  Menu inner search
+            searchPopup: function () {
+                $('.search-trigger').on('click', function (e) {
+                    e.preventDefault();
+                    $('.search-popup').addClass('open')
+                });
+                $('.close-trigger').on('click', function () {
+                    $('.search-popup').removeClass('open')
+                });
+            },
+
             MobileMenu: function () {
                 jQuery(window).on('scroll', function () {
                     if (jQuery(window).scrollTop() > 250) {

@@ -20,13 +20,22 @@
                 <!-- Main Menu -->
                 <div class="main-menu">
                     <div class="row justify-content-between align-items-center">
-
-                        <div class="col-lg-3 col-md-4 col-sm-8 logo-col">
+                        <div class="col-lg-2 col-md-2 col-sm-4 col mobile_menu_col">
+                            <div class="mobile-bar-wrap">
+                                <div class="mobile_menu_button open_mobile_menu">
+                                    <i class="fa-solid fa-bars"></i>
+                                </div>
+                                <div class="search-button">
+                                    <a href="#" class="search-trigger"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm- col">
                             <div class="logo d-logo">
                                 <?php mori_logo(); ?>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-8 col-sm-4 menu-col">
+                        <div class="col-lg-8 col-md-4 col-sm-2 desktop_menu_col">
                             <!--Main Menu-->
                             <div class="main-menu-navigation">
                                 <nav class="navigation-main-area ul-li">
@@ -44,66 +53,8 @@
                                     ?>
                                 </nav>
                             </div>
-                            <!-- Start Mobile Menu -->
-                            <div class="mobile_menu position-relative">
-                                <div class="mobile_menu_wrap">
-                                    <div class="mobile_menu_overlay open_mobile_menu"></div>
-                                    <div class="mobile_menu_content">
-                                        <div class="mobile_menu_close open_mobile_menu">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                        <div class="m-brand-logo">
-                                            <?php mori_logo(); ?>
-                                        </div>
-                                        <div class="header-right-buttons">
-                                            <div class="mori-button">
-                                                <a class="thm-btn" href="#"><?php mori_translated_text('Webshop');?></a>
-                                            </div>
-                                            <div class="mori-button-outline">
-                                                <a class="thm-btn" href="#"><?php mori_translated_text('Trainingen');?></a>
-                                            </div>
-                                        </div>
-                                        <div class="m-main-menu">
-                                            <nav class="mobile-main-navigation  clearfix ul-li">
-                                                <?php
-                                                echo str_replace(['menu-item-has-children', 'sub-menu'], ['dropdown', 'dropdown-menu clearfix'],
-                                                    wp_nav_menu(array(
-                                                            'container' => false,
-                                                            'echo' => false,
-                                                            'menu_id' => 'm-shop-nav',
-                                                            'theme_location' => 'shop',
-                                                            'fallback_cb' => 'mori_no_shop_nav',
-                                                            'items_wrap' => '<ul class="navbar-nav text-capitalize clearfix">%3$s</ul>',
-                                                        )
-                                                    ));
-                                                ?>
-                                            </nav>
-                                        </div>
-                                        <div class="m-shop-menu">
-                                            <nav class="mobile-main-navigation  clearfix ul-li">
-                                                <?php
-                                                echo str_replace(['menu-item-has-children', 'sub-menu'], ['dropdown', 'dropdown-menu clearfix'],
-                                                    wp_nav_menu(array(
-                                                            'container' => false,
-                                                            'echo' => false,
-                                                            'menu_id' => 'm-main-nav',
-                                                            'theme_location' => 'primary',
-                                                            'fallback_cb' => 'mori_no_main_nav',
-                                                            'items_wrap' => '<ul class="navbar-nav text-capitalize clearfix">%3$s</ul>',
-                                                        )
-                                                    ));
-                                                ?>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mobile_menu_button open_mobile_menu">
-                                    <i class="fas fa-bars"></i>
-                                </div>
-                            </div>
-                            <!-- End Mobile Menu -->
                         </div>
-                        <div class="col-lg-1 display-none">
+                        <div class="col-lg-1 col-md-2 col-sm-4 col">
                             <div class="menu-right">
                                 <ul>
                                     <li class="dropdown"><a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>"><i><img
@@ -194,3 +145,72 @@
             </div>
         </div>
     </div>
+    <!-- Start Mobile Menu -->
+    <div class="mobile_menu position-relative">
+        <div class="mobile_menu_wrap">
+            <div class="mobile_menu_overlay open_mobile_menu"></div>
+            <div class="mobile_menu_content">
+                <div class="mobile_menu_close open_mobile_menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="m-brand-logo">
+                    <?php mori_logo(); ?>
+                </div>
+                <div class="header-right-buttons">
+                    <div class="mori-button">
+                        <a class="thm-btn" href="#"><?php mori_translated_text('Webshop');?></a>
+                    </div>
+                    <div class="mori-button-outline">
+                        <a class="thm-btn" href="#"><?php mori_translated_text('Trainingen');?></a>
+                    </div>
+                </div>
+                <div class="m-main-menu">
+                    <nav class="mobile-main-navigation  clearfix ul-li">
+                        <?php
+                        echo str_replace(['menu-item-has-children', 'sub-menu'], ['dropdown', 'dropdown-menu clearfix'],
+                            wp_nav_menu(array(
+                                    'container' => false,
+                                    'echo' => false,
+                                    'menu_id' => 'm-shop-nav',
+                                    'theme_location' => 'shop',
+                                    'fallback_cb' => 'mori_no_shop_nav',
+                                    'items_wrap' => '<ul class="navbar-nav text-capitalize clearfix">%3$s</ul>',
+                                )
+                            ));
+                        ?>
+                    </nav>
+                </div>
+                <div class="m-shop-menu">
+                    <nav class="mobile-main-navigation  clearfix ul-li">
+                        <?php
+                        echo str_replace(['menu-item-has-children', 'sub-menu'], ['dropdown', 'dropdown-menu clearfix'],
+                            wp_nav_menu(array(
+                                    'container' => false,
+                                    'echo' => false,
+                                    'menu_id' => 'm-main-nav',
+                                    'theme_location' => 'primary',
+                                    'fallback_cb' => 'mori_no_main_nav',
+                                    'items_wrap' => '<ul class="navbar-nav text-capitalize clearfix">%3$s</ul>',
+                                )
+                            ));
+                        ?>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Mobile Menu -->
+<!-- Start Search Popup  -->
+<div class="search-popup">
+    <div class="close-button">
+        <button class="close-trigger"><i class="fa-solid fa-times"></i></button>
+    </div>
+    <div class="inner">
+        <form id="searchform" class="searchbox search-form" action="<?php echo home_url('/');?>"  method="get">
+            <input type="text" id="search" placeholder="<?php mori_translated_text('Ik ben opzoek naar…');?>" class="input search-popup-field" name="s" value=""/>
+            <input type="hidden" name="post_type" value="product" />
+            <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i> <?php mori_translated_text('Search');?></button>
+        </form>
+    </div>
+</div>
+<!-- End Search Popup  -->

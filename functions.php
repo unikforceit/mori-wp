@@ -208,6 +208,7 @@ function mori_scripts()
 
     wp_enqueue_script('mori-appear-2', get_template_directory_uri() . '/assets/js/appear-2.js', array('jquery'), mori_dynamic_version(), true);
     wp_enqueue_script('mori-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), mori_dynamic_version(), true);
+    wp_enqueue_script('mori-fontawesome', get_template_directory_uri() . '/assets/js/all.min.js', array('jquery'), mori_dynamic_version(), true);
     wp_enqueue_script('mori-jquery-nice-select', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js', array('jquery'), MORI_VERSION, true);
     wp_enqueue_script('mori-swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array('jquery'), mori_dynamic_version(), true);
     wp_enqueue_script('mori-wow', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), mori_dynamic_version(), true);

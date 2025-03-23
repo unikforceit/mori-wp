@@ -254,7 +254,7 @@ add_filter( 'the_content', 'embed_registration_form_on_page' );
 
 // Redirect logged-in users to the account page
 function redirect_logged_in_users_from_register_page() {
-    if ( is_page( get_option( 'mori_register_page' ) ) && is_user_logged_in() ) {
+    if ( get_option( 'mori_register_page' ) && is_page( get_option( 'mori_register_page' ) ) && is_user_logged_in() ) {
         wp_redirect( wc_get_account_endpoint_url('') ); // Redirect to My Account page
         exit;
     }
