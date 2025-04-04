@@ -8,6 +8,19 @@
         .footer-widget-head {
             padding-bottom: 30px;
             text-transform: uppercase;
+            position: relative;
+            span.f-heading-arrow {
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: #fff;
+                font-size: 20px;
+                cursor: pointer;
+                display: none;
+                @media screen and (max-width: 991px) {
+                    display: block;
+                }
+            }
         }
         h3 {
             font-family: $heading-font;
@@ -18,7 +31,7 @@
         .mori-about-widget {
                 p {
                     padding-bottom: 32px;
-                    text-align: justify;
+                    font-family: $third_font;
                 }
             ul {
                 display: flex;
@@ -79,6 +92,7 @@
                     }
                 }
                 a {
+                    font-family: $third_font;
                     font-size: toRem(14);
                     text-transform: capitalize;
                     color: #909090;
@@ -96,6 +110,7 @@
                 gap: 10px;
                 li{
                     a{
+                        font-family: $third_font;
                         color: #909090;
                         &:hover{
                             color: $white;

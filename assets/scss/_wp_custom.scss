@@ -427,10 +427,11 @@ table.variations {
     }
   }
 }
-.is-large.wc-block-cart .wc-block-components-sidebar {
+.is-large.wc-block-cart .wc-block-components-sidebar,
+.is-small.wc-block-components-sidebar-layout .wc-block-components-sidebar{
   margin-top: 0;
   background: #CDD6E5;
-  padding: 30px;
+  padding: 30px !important;
   border-radius: 12px;
 }
 .wc-block-cart__submit-button {

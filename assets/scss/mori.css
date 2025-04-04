@@ -137,7 +137,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: #717171;
-  background-color: #F1ECE3;
+  background-color: #F5F5F5;
   line-height: 1.5;
   -moz-osx-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -150,7 +150,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Heading Now Trial 47", sans-serif;
 }
 
 p {
@@ -217,6 +217,11 @@ select:visited {
 
 .row {
   row-gap: 1.875rem;
+}
+
+i.mori-svg svg {
+  width: 20px;
+  height: auto;
 }
 
 .preloader {
@@ -471,7 +476,7 @@ select:visited {
 .navigation-main-area li a {
   color: #212121;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 .navigation-main-area li a:hover {
   color: #CDD6E5;
@@ -570,6 +575,16 @@ select:visited {
   position: relative;
   padding: 0 12px;
 }
+@media screen and (max-width: 991px) {
+  .menu-right ul li.user-link {
+    display: none;
+  }
+}
+@media screen and (min-width: 991px) {
+  .menu-right ul li.heart-link {
+    display: none;
+  }
+}
 .menu-right ul li a {
   display: inline-block;
   font-size: 22px;
@@ -590,6 +605,12 @@ select:visited {
   line-height: 20px;
 }
 
+.middle-header .navigation-main-area li a {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 /*Mobile Menu */
 /*-------------------*/
 .mobile_menu_content {
@@ -597,12 +618,12 @@ select:visited {
   bottom: 0;
   left: -100%;
   height: 100vh;
-  z-index: 101;
+  z-index: 99999;
   position: fixed;
   width: 100%;
   overflow-y: scroll;
   background-color: #fff;
-  padding: 20px 35px 35px 35px;
+  padding: 20px;
   box-shadow: 0 3px 5px rgba(100, 100, 100, 0.19);
   transition: all 0.5s ease-in;
 }
@@ -685,6 +706,18 @@ select:visited {
   line-height: 0px;
   text-align: left;
 }
+.mobile_menu_button .mobile-burger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mobile_menu_button .mobile-burger-menu .menu-line {
+  background: #707070;
+  height: 2px;
+  width: 20px;
+  border-radius: 5px;
+  display: inline-block;
+}
 
 .mobile_menu .mobile-main-navigation .navbar-nav li a:after {
   display: none;
@@ -766,16 +799,70 @@ select:visited {
   display: flex;
   gap: 15px;
   font-size: 20px;
+  align-items: center;
+}
+
+.mobile_menu_content .header-right-buttons {
+  display: flex;
+  gap: 10px;
+}
+.mobile_menu_content .m-main-menu {
+  padding: 30px 0;
+  border-bottom: 1px solid #707070;
+}
+.mobile_menu_content .m-main-menu .navbar-nav li a {
+  padding: 5px 0;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  font-family: "Heading Now Trial 47", sans-serif;
+}
+.mobile_menu_content .m-main-menu .dropdown .dropdown-btn {
+  top: 30%;
+}
+.mobile_menu_content .m-shop-menu {
+  padding-top: 12px;
+}
+.mobile_menu_content .m-shop-menu .navbar-nav li a {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-family: "PP Neue Montreal", sans-serif;
 }
 
 .top-bar-area {
   height: 2.5rem;
   background: #1E1E1E;
+}
+@media screen and (max-width: 991px) {
+  .top-bar-area .col-lg-2 {
+    display: none;
+  }
+}
+.top-bar-area .top-bar-icons {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  height: 40px;
+}
+.top-bar-area .top-bar-icons i.mori-svg svg {
+  width: 14px;
+}
+.top-bar-area .top-bar-icons i.mori-svg svg path {
+  fill: #ffdd15;
+}
+.top-bar-area .top-bar-text {
   color: #ffffff;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
   line-height: 2.5rem;
+}
+.top-bar-area .top-bar-text i.mori-svg svg {
+  width: 14px;
+  margin-right: 5px;
+}
+.top-bar-area .top-bar-text i.mori-svg svg path {
+  fill: #ffffff;
 }
 
 .bottom-bar-area {
@@ -784,9 +871,19 @@ select:visited {
 }
 .bottom-bar-area .header-right-buttons {
   display: flex;
-  flex-wrap: wrap;
   column-gap: 0.75rem;
   justify-content: flex-end;
+  position: relative;
+}
+.bottom-bar-area .header-right-buttons:before {
+  content: "";
+  position: absolute;
+  background: #707070;
+  height: 50px;
+  width: 1px;
+  left: 0;
+  opacity: 28%;
+  top: -40%;
 }
 .bottom-bar-area .navigation-main-area li a {
   font-size: 1rem;
@@ -802,12 +899,23 @@ select:visited {
   background: #F2F2F2;
   border-radius: 23px;
   height: 45px;
-  padding: 10px 30px;
+  padding: 10px 20px 10px 35px;
+  border: none;
+}
+.bottom-bar-area .search-wrapper input::placeholder {
+  font-size: 0.75rem;
+  padding-left: 5px;
 }
 .bottom-bar-area span.search-button {
   position: absolute;
   left: 10px;
   top: 10px;
+}
+.bottom-bar-area span.search-button i.mori-svg svg {
+  width: 19px;
+}
+.bottom-bar-area span.search-button i.mori-svg svg path {
+  fill: #272626;
 }
 @media screen and (max-width: 1024px) {
   .bottom-bar-area {
@@ -831,7 +939,9 @@ Start Button Design
   outline: none;
   box-shadow: none;
   border-radius: 1.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 500;
 }
 .thm-btn:hover {
   background: #CDD6E5;
@@ -4800,16 +4910,31 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 .footer-widget-area .footer-widget .footer-widget-head {
   padding-bottom: 30px;
   text-transform: uppercase;
+  position: relative;
+}
+.footer-widget-area .footer-widget .footer-widget-head span.f-heading-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 991px) {
+  .footer-widget-area .footer-widget .footer-widget-head span.f-heading-arrow {
+    display: block;
+  }
 }
 .footer-widget-area .footer-widget h3 {
-  font-family: "Inter", sans-serif;
+  font-family: "Heading Now Trial 47", sans-serif;
   font-weight: 700;
   font-size: 24px;
   color: #fff;
 }
 .footer-widget-area .footer-widget .mori-about-widget p {
   padding-bottom: 32px;
-  text-align: justify;
+  font-family: "PP Neue Montreal", sans-serif;
 }
 .footer-widget-area .footer-widget .mori-about-widget ul {
   display: flex;
@@ -4869,6 +4994,7 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   color: #ffffff;
 }
 .footer-widget-area .footer-widget ul.menu li a {
+  font-family: "PP Neue Montreal", sans-serif;
   font-size: 0.875rem;
   text-transform: capitalize;
   color: #909090;
@@ -4883,6 +5009,7 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   gap: 10px;
 }
 .footer-widget-area .footer-widget .mori-contact-widget ul li a {
+  font-family: "PP Neue Montreal", sans-serif;
   color: #909090;
 }
 .footer-widget-area .footer-widget .mori-contact-widget ul li a:hover {
@@ -5705,10 +5832,11 @@ table.variations tbody tr:last-child > * {
   padding-bottom: 0;
 }
 
-.is-large.wc-block-cart .wc-block-components-sidebar {
+.is-large.wc-block-cart .wc-block-components-sidebar,
+.is-small.wc-block-components-sidebar-layout .wc-block-components-sidebar {
   margin-top: 0;
   background: #CDD6E5;
-  padding: 30px;
+  padding: 30px !important;
   border-radius: 12px;
 }
 

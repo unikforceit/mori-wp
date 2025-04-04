@@ -3,9 +3,19 @@
   background: $white;
   .header-right-buttons {
     display: flex;
-    flex-wrap: wrap;
     column-gap: toRem(12);
     justify-content: flex-end;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background: #707070;
+      height: 50px;
+      width: 1px;
+      left: 0;
+      opacity: 28%;
+      top: -40%;
+    }
   }
 
   .navigation-main-area {
@@ -24,12 +34,23 @@
     background: #F2F2F2;
     border-radius: 23px;
     height: 45px;
-    padding: 10px 30px;
+    padding: 10px 20px 10px 35px;
+    border: none;
+    &::placeholder {
+      font-size: toRem(12);
+      padding-left: 5px;
+    }
   }
   span.search-button {
     position: absolute;
     left: 10px;
     top: 10px;
+    i.mori-svg svg {
+      width: 19px;
+      path{
+        fill: #272626;
+      }
+    }
   }
   @media screen and (max-width: 1024px) {
     display: none;

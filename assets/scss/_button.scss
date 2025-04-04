@@ -15,8 +15,9 @@ Start Button Design
   outline: none;
   box-shadow: none;
   border-radius: toRem(24);
-  font-size: toRem(18);
-
+  font-size: toRem(16);
+  font-family: $third_font;
+  font-weight: $fw_medium;
   &:hover {
     background: $button_color_2;
     border: 1px solid $button_color_2;

@@ -153,7 +153,7 @@ function mori_widgets_init()
             'before_widget' => '<div class="col-lg-3"><div id="%1$s" class="footer-widget %2$s">',
             'after_widget' => '</div></div>',
             'before_title' => '<div class="footer-widget-head"><h3>',
-            'after_title' => '</h3></div>',
+            'after_title' => '</h3><span class="f-heading-arrow"><i class="fa-solid fa-chevron-up"></i></span></div>',
         )
     );
 
@@ -166,42 +166,51 @@ add_action('widgets_init', 'mori_widgets_init');
  *
  * @return string Google fonts URL for the theme.
  */
-function mori_fonts_url() {
-    $fonts_url = '';
-    $fonts = array();
-    $subsets = 'latin'; // You can add other subsets like 'latin-ext' if needed.
+function mori_custom_fonts() {
+    // Define your fonts
+    $font_families = array(
+        'Boldonse&display=swap', // Example font with weights
+        'Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
+    );
 
-    // Check if 'Poppins' is enabled
-    if ('off' !== esc_html_x('on', 'Poppins font: on or off', 'mori')) {
-        $fonts[] = 'Poppins:400,500,600,700,900';
-    }
-    if ('off' !== esc_html_x('on', 'Inter font: on or off', 'mori')) {
-        $fonts[] = 'Inter:400,500,600,700,900';
-    }
+    // Build the Google Fonts URL
+    $fonts_url = add_query_arg( array(
+        'family' => implode( '&family=', $font_families ),
+        'display' => 'swap',
+    ), 'https://fonts.googleapis.com/css2' );
 
-    // If we have fonts to load, build the URL
-    if ($fonts) {
-        $fonts_url = add_query_arg(array(
-            'family' => urlencode(implode('|', $fonts)),
-            'subset' => urlencode($subsets),
-        ), 'https://fonts.googleapis.com/css');
-    }
+    // Enqueue with preconnect hints
+    wp_enqueue_style( 'legendary-google-fonts', $fonts_url, array(), null );
 
-    return $fonts_url;
+    // Add preconnect for performance
+    add_filter( 'wp_resource_hints', function( $urls, $relation_type ) {
+        if ( 'preconnect' === $relation_type ) {
+            $urls[] = array(
+                'href' => 'https://fonts.gstatic.com',
+                'crossorigin',
+            );
+        }
+        return $urls;
+    }, 10, 2 );
+    wp_enqueue_style('mori-cs-fonts', get_template_directory_uri() . '/assets/fonts/font.css', array(), mori_dynamic_version(), 'all');
 }
 
+add_action( 'wp_enqueue_scripts', 'mori_custom_fonts' );
+if (is_admin()){
+    add_action( 'admin_head', 'mori_custom_fonts' );
+}
 
 /**
  * Enqueue scripts and styles.
  */
 function mori_scripts()
 {
-    wp_enqueue_style('mori-fonts', mori_fonts_url());
     wp_enqueue_style('mori-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), mori_dynamic_version(), 'all');
     wp_enqueue_style('mori-fontawesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), mori_dynamic_version(), 'all');
     wp_enqueue_style('mori-animate', get_template_directory_uri() . '/assets/css/animate.min.css', array(), mori_dynamic_version(), 'all');
     wp_enqueue_style('mori-nice-select', get_template_directory_uri() . '/assets/css/nice-select.css', array(), mori_dynamic_version(), 'all');
     wp_enqueue_style('mori-swiper-bundle', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), mori_dynamic_version(), 'all');
+    wp_enqueue_style('mori-lity', get_template_directory_uri() . '/assets/css/lity.min.css', array(), mori_dynamic_version(), 'all');
     wp_enqueue_style('mori-main', get_template_directory_uri() . '/assets/scss/mori.css', array(), mori_dynamic_version(), 'all');
     wp_enqueue_style('mori-style', get_stylesheet_uri(), array(), mori_dynamic_version());
     //wp_style_add_data('mori-style', 'rtl', 'replace');
@@ -212,6 +221,7 @@ function mori_scripts()
     wp_enqueue_script('mori-jquery-nice-select', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js', array('jquery'), MORI_VERSION, true);
     wp_enqueue_script('mori-swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array('jquery'), mori_dynamic_version(), true);
     wp_enqueue_script('mori-wow', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), mori_dynamic_version(), true);
+    wp_enqueue_script('mori-lity', get_template_directory_uri() . '/assets/js/lity.min.js', array('jquery'), mori_dynamic_version(), true);
     wp_enqueue_script('mori-woo', get_template_directory_uri() . '/assets/js/mori-woo.js', array('jquery'), mori_dynamic_version(), true);
 
     wp_enqueue_script('mori-main', get_template_directory_uri() . '/assets/js/mori.js', array('jquery'), mori_dynamic_version(), true);

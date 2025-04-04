@@ -32,7 +32,7 @@ body {
   font-size: $body_font_size;
   font-weight: $body_font_weight;
   color: $body_text_color;
-  background-color: $section_bg;
+  background-color: #F5F5F5;
   line-height: 1.5;
   -moz-osx-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -122,6 +122,11 @@ select:visited {
 // row gap
 .row {
   row-gap: toRem(30);
+}
+
+i.mori-svg svg {
+  width: 20px;
+  height: auto;
 }
 
 // Preloader css

@@ -77,6 +77,17 @@ Last change:    00/00/00
                         $(this).prev('ul').slideToggle(500);
                     });
                 }
+
+                $('.f-heading-arrow').click(function() {
+                    const targetDiv = $(this).closest('.footer-widget-head').next('div'); // Target the next div
+                    const icon = $(this).find('svg'); // Get the icon (SVG element)
+
+                    // Toggle the arrow direction (icon)
+                    icon.toggleClass('fa-chevron-up fa-chevron-down');
+
+                    targetDiv.slideToggle(500);
+                });
+
             },
             Tools: function () {
                 $('.menu-search button').on("click", function () {

@@ -13,7 +13,24 @@
     <!-- Start Main Header -->
     <header id="main-header" class="main-header">
         <div class="top-bar-area">
-            <p><?php mori_translated_text('14 dagen bedenktijd');?></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="top-bar-icons">
+                            <?php mori_svg_icons('star-fill');?>
+                            <?php mori_svg_icons('star-fill');?>
+                            <?php mori_svg_icons('star-fill');?>
+                            <?php mori_svg_icons('star-fill');?>
+                            <?php mori_svg_icons('star-leadinghalf-filled');?>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="top-bar-text">
+                            <p><?php mori_svg_icons('clock-arrow');?> <?php mori_translated_text('14 dagen bedenktijd');?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menu-header middle-header">
             <div class="container">
@@ -23,10 +40,14 @@
                         <div class="col-lg-2 col-md-2 col-sm-4 col mobile_menu_col">
                             <div class="mobile-bar-wrap">
                                 <div class="mobile_menu_button open_mobile_menu">
-                                    <i class="fa-solid fa-bars"></i>
+                                    <div class="mobile-burger-menu">
+                                        <span class="menu-line"></span>
+                                        <span class="menu-line"></span>
+                                        <span class="menu-line"></span>
+                                    </div>
                                 </div>
                                 <div class="search-button">
-                                    <a href="#" class="search-trigger"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                    <a href="#" class="search-trigger"><?php mori_svg_icons('search');?></a>
                                 </div>
                             </div>
                         </div>
@@ -57,23 +78,19 @@
                         <div class="col-lg-1 col-md-2 col-sm-4 col">
                             <div class="menu-right">
                                 <ul>
-                                    <li class="dropdown"><a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>"><i><img
-                                                        src="<?php echo get_template_directory_uri(); ?>/images/user.svg"></i></a>
-                                        <?php
-                                        wp_nav_menu(array(
-                                                'container' => false,
-                                                'menu_id' => 'account-main-nav',
-                                                'theme_location' => 'account',
-                                                'fallback_cb' => 'mori_no_account_nav',
-                                                'items_wrap' => '<ul class="dropdown-menu">%3$s</ul>',
-                                                'depth' => 1,
-                                            )
-                                        );
-                                        ?>
+                                    <li class="user-link">
+                                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>">
+                                            <?php mori_svg_icons('user');?>
+                                        </a>
+                                    </li>
+                                    <li class="heart-link">
+                                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>">
+                                            <?php mori_svg_icons('heart');?>
+                                        </a>
                                     </li>
                                     <?php if (class_exists('WooCommerce')){?>
-                                        <li><a class="cart-open" href="javascript:void(0)"><i><img
-                                                            src="<?php echo get_template_directory_uri(); ?>/images/shopping-bag.svg"></i><span class="mori-cart-count">0</span></a>
+                                        <li><a class="cart-open" href="javascript:void(0)">
+                                                <?php mori_svg_icons('shopping-cart');?> <span class="mori-cart-count">0</span></a>
                                         </li>
                                     <?php } ?>
                                 </ul>
@@ -111,7 +128,7 @@
                         <form id="searchform" class="searchbox search-form" action="<?php echo home_url('/');?>"  method="get">
                             <input type="text" id="search" placeholder="<?php mori_translated_text('Ik ben opzoek naar…');?>" class="input search-popup-field" name="s" value=""/>
                             <input type="hidden" name="post_type" value="product" />
-                            <span class="search-button"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="search-button"><?php mori_svg_icons('search');?></span>
                         </form>
                     </div>
                 </div>
@@ -122,7 +139,7 @@
                             <a class="thm-btn" href="#"><?php mori_translated_text('Webshop');?></a>
                         </div>
                         <div class="mori-button-outline">
-                            <a class="thm-btn" href="#"><?php mori_translated_text('Trainingen');?></a>
+                            <a class="thm-btn" href="#"><?php mori_svg_icons('graduation');?> <?php mori_translated_text('Trainingen');?></a>
                         </div>
                     </div>
                 </div>
@@ -135,7 +152,7 @@
     <div class="shop-cart">
         <div class="cart-wraper">
             <div class="cart-header">
-                <div class="cart-close"><i class="fas fa-times"></i></div>
+                <div class="cart-close"><?php mori_svg_icons('close');?></div>
                 <p>Cart</p>
             </div>
             <div class="widget_shopping_cart_content">
@@ -151,7 +168,7 @@
             <div class="mobile_menu_overlay open_mobile_menu"></div>
             <div class="mobile_menu_content">
                 <div class="mobile_menu_close open_mobile_menu">
-                    <i class="fas fa-times"></i>
+                    <?php mori_svg_icons('close');?>
                 </div>
                 <div class="m-brand-logo">
                     <?php mori_logo(); ?>
@@ -203,13 +220,13 @@
 <!-- Start Search Popup  -->
 <div class="search-popup">
     <div class="close-button">
-        <button class="close-trigger"><i class="fa-solid fa-times"></i></button>
+        <button class="close-trigger"><?php mori_svg_icons('close');?></button>
     </div>
     <div class="inner">
         <form id="searchform" class="searchbox search-form" action="<?php echo home_url('/');?>"  method="get">
             <input type="text" id="search" placeholder="<?php mori_translated_text('Ik ben opzoek naar…');?>" class="input search-popup-field" name="s" value=""/>
             <input type="hidden" name="post_type" value="product" />
-            <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i> <?php mori_translated_text('Search');?></button>
+            <button class="search-button" type="submit"><?php mori_svg_icons('search');?> <?php mori_translated_text('Search');?></button>
         </form>
     </div>
 </div>

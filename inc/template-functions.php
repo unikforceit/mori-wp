@@ -436,3 +436,31 @@ function mori_translated_text($text)
         _e($text, 'mori');
     }
 }
+
+function mori_svg_icons($icon_name)
+{
+    echo '<i class="mori-svg">'.file_get_contents(get_template_directory_uri(). '/assets/icons/'.$icon_name.'.svg').'</i>';
+}
+// In your theme's functions.php or a custom plugin
+function get_theme_svg_icons() {
+    $icons_path = get_template_directory() . '/assets/icons/';
+    $icons_url = get_template_directory_uri() . '/assets/icons/';
+    $icons = array();
+
+    // Check if directory exists
+    if (!file_exists($icons_path)) {
+        return $icons;
+    }
+
+    // Scan directory for SVG files
+    $files = scandir($icons_path);
+
+    foreach ($files as $file) {
+        if (pathinfo($file, PATHINFO_EXTENSION) === 'svg') {
+            $icon_name = pathinfo($file, PATHINFO_FILENAME);
+            $icons[$icon_name] = ucfirst(str_replace('-', ' ', $icon_name));
+        }
+    }
+
+    return $icons;
+}
