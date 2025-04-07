@@ -48,7 +48,7 @@
         }
 
         .title {
-            @include fontFamily($Josefin, 22, $fw_bold, 40, $black2);
+
         }
 
         .excerpt {
@@ -58,7 +58,6 @@
 
         .permaLink {
             display: inline-block;
-            @include fontFamily($Josefin, 16, $fw_medium, 26, $orange2);
             text-decoration: underline;
         }
     }
@@ -144,7 +143,6 @@
 
 // Blog Title
 .post-title {
-    @include fontFamily($Josefin, 40, $fw_bold, 66, $black2);
     // padding-bottom: toRem(30);
 }
 
@@ -322,13 +320,11 @@
             }
 
             h3 {
-                @include fontFamily($Josefin, 20, $fw_bold, 20, $black2);
                 padding-bottom: 10px;
             }
         }
         &.widget_block{
             h2{
-                @include fontFamily($Josefin, 20, $fw_bold, 20, $black2);
                 padding-bottom: 10px;
                 margin-bottom: 30px;
                 position: relative;
@@ -408,8 +404,7 @@
                 a,
                 span {
                     position: relative;
-                    @include fontFamily($Josefin, 20, $fw_bold, 20, #fff);
-                }
+              }
 
                 span {
                     width: toRem(51);
@@ -496,8 +491,7 @@
                     }
 
                     .sFollow-no {
-                        @include fontFamily($Josefin, 20, $fw_semi_bold, 66, $black2);
-                    }
+                   }
                 }
 
                 .info {
@@ -516,8 +510,6 @@
             padding-left: toRem(20);
 
             .title {
-                @include fontFamily($Josefin, 36, $fw_bold, 46, $black2);
-
                 span {
                     display: block;
                     @include fontFamily($poppins, 16, $fw_regular, 28, $orange2);
@@ -526,8 +518,7 @@
 
             .sbanner_link {
                 display: inline-block;
-                @include fontFamily($Josefin, 16, $fw_regular, 16, $black2);
-                text-decoration: underline;
+               text-decoration: underline;
                 margin-top: toRem(28);
             }
         }

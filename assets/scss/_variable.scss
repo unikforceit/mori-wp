@@ -65,10 +65,8 @@ $sticky_dropdown_position: toRem(38);
 $menu_dropdown_position: toRem(80);
 
 // Font Family
-$Josefin: $body_font;
 $poppins: 'Poppins', sans-serif;
-.f-josefin{font-family: $Josefin !important;}
-.f-poppins{font-family: $poppins !important;}
+
 
 // Font Size
 $fz-14: toRem(14);

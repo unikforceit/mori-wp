@@ -56,13 +56,13 @@ do_action( 'woocommerce_before_customer_login_form' );
                 <?php do_action( 'woocommerce_login_form' ); ?>
 
                 <p class="form-row">
-                    <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Log in', 'woocommerce' ); ?></button>
-                    <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="thm-btn"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
+                    <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Inloggen', 'woocommerce' ); ?></button>
+                    <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="thm-btn"><?php esc_html_e( 'Hulp bij inloggen', 'woocommerce' ); ?></a>
                 </p>
 
-                <p class="form-row">
+                <div class="form-register-link">
                     <a href="<?php echo esc_url( get_permalink($register_page_id) ); ?>"><?php esc_html_e( 'Registreren als zakelijke partner', 'woocommerce' ); ?></a>
-                </p>
+                </div>
 
                 <?php do_action( 'woocommerce_login_form_end' ); ?>
             </form>

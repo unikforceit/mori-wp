@@ -3,7 +3,7 @@
   background: $white;
   .header-right-buttons {
     display: flex;
-    column-gap: toRem(12);
+    column-gap: 12px;
     justify-content: flex-end;
     position: relative;
     &:before {

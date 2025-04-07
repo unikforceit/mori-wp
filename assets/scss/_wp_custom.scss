@@ -3,7 +3,16 @@
   margin-bottom: 1em;
   float: inherit;
 }
-
+.mori-woocommerce-account{
+  .blog-content .container{
+    max-width: 930px;
+  }
+}
+.mori-woocommerce-register {
+  .blog-content .container{
+    max-width: 1000px;
+  }
+}
 .woocommerce {
   nav.woocommerce-pagination {
     ul {
@@ -131,7 +140,7 @@
 button.woocommerce-Button.button.wp-element-button,
 .button-wrappper a.button{
   background: $white;
-  padding: 10px 20px;
+  padding: 7px 20px;
   position: relative;
   color: $black !important;
   z-index: 1;
@@ -140,7 +149,7 @@ button.woocommerce-Button.button.wp-element-button,
   outline: none;
   box-shadow: none;
   border-radius: toRem(24);
-  font-size: toRem(18);
+  font-size: toRem(16);
   font-weight: 400;
   line-height: inherit;
   float: none !important;
@@ -405,7 +414,7 @@ button.woocommerce-Button.button.wp-element-button,
   .form-row input {
     border: none;
     border-bottom: 1px solid #cfcfcf !important;
-
+    border-radius: 0;
     &:focus, &:hover {
       border-bottom-color: #E59D73 !important;
     }
@@ -454,15 +463,22 @@ table.variations {
     opacity: .3;
   }
 }
+.register-form-wrapper {
+  text-align: center;
+  .custom-logo-link {
+    opacity: .3;
+  }
+}
 
 .woocommerce form .form-row .input-text, .woocommerce form .form-row select {
   border: none;
   border-bottom: 1px solid #cfcfcf !important;
+  border-radius: 0;
 }
 
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
   padding: 50px;
-  margin: 2em 0;
+  margin: 0;
   background: #fff;
   border-radius: 20px;
 }
@@ -1019,14 +1035,25 @@ form.cart a.valento_product_wishlist_button {
 }
 
 .login-sec-title {
+  max-width: 90%;
   p{
+    color: #000000;
     font-size: toRem(19);
+    font-family: $third_font;
+    font-weight: 500;
+    @media screen and (max-width: 991px) {
+      font-size: toRem(16);
+    }
   }
   h2{
-    font-family: "Inter", sans-serif;
+    color: #000000;
+    text-transform: uppercase;
     font-size: toRem(68);
     font-weight: 700;
     margin: 20px 0;
+    @media screen and (max-width: 991px) {
+      font-size: toRem(44);
+    }
   }
 }
 .login-author {
@@ -1041,6 +1068,32 @@ form.cart a.valento_product_wishlist_button {
   }
   .login-author-title {
     font-size: toRem(19);
+    font-family: $third_font;
+    font-weight: 500;
     border-bottom: 1px solid #000000;
   }
+}
+.form-register-link {
+  position: relative;
+  padding-top: 40px;
+  text-align: center;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 20px;
+    left: 0;
+    background: #d1d1d1;
+  }
+}
+.register-form-wrapper .custom-logo,
+.login-form-wrapper .custom-logo{
+  margin-top: 20px;
+  width: 130px;
+}
+
+.thm-btn.woocommerce-button-register{
+  background: #000000;
+  color: #fff;
 }

@@ -4,6 +4,7 @@
     background: $black3;
     padding: 70px 0;
     position: relative;
+    overflow: hidden;
     .footer-widget {
         .footer-widget-head {
             padding-bottom: 30px;
@@ -114,6 +115,30 @@
                         color: #909090;
                         &:hover{
                             color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        .newsletter-html-form {
+            form{
+                position: relative;
+                input[type="email"]{
+                    background: transparent;
+                    border: 1px solid #707070;
+                    border-radius: 28px;
+                    padding: 8px 16px;
+                    color: #ffffff;
+                    width: 100%;
+                }
+                .newsletter-btn{
+                    position: absolute;
+                    right: 10px;
+                    top: 8px;
+                    cursor: pointer;
+                    svg{
+                        path{
+                            fill: #fff;
                         }
                     }
                 }

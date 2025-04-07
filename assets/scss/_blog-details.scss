@@ -21,7 +21,6 @@
     max-width: toRem(810);
 
     h4 {
-      @include fontFamily($Josefin, 20, $fw_medium, 35, $black2);
     }
 
     span.author {
@@ -48,7 +47,6 @@
   margin-bottom: toRem(30);
 
   .title {
-    @include fontFamily($Josefin, 20, $fw_bold, 66, $black2);
   }
 
   ul {
@@ -183,7 +181,6 @@
   margin-top: 40px;
 
   h3 {
-    @include fontFamily($Josefin, 40, $fw_bold, 66, $black2);
   }
 
   ol {

@@ -51,49 +51,58 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm- col">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col desktop_logo_col">
                             <div class="logo d-logo">
                                 <?php mori_logo(); ?>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-4 col-sm-2 desktop_menu_col">
-                            <!--Main Menu-->
-                            <div class="main-menu-navigation">
-                                <nav class="navigation-main-area ul-li">
-                                    <?php
-                                    echo str_replace(['menu-item-has-children', 'sub-menu'], ['dropdown', 'dropdown-menu clearfix'],
-                                        wp_nav_menu(array(
-                                                'container' => false,
-                                                'echo' => false,
-                                                'menu_id' => 'main-nav',
-                                                'theme_location' => 'primary',
-                                                'fallback_cb' => 'mori_no_main_nav',
-                                                'items_wrap' => '<ul>%3$s</ul>',
-                                            )
-                                        ));
-                                    ?>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-sm-4 col">
-                            <div class="menu-right">
-                                <ul>
-                                    <li class="user-link">
-                                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>">
-                                            <?php mori_svg_icons('user');?>
-                                        </a>
-                                    </li>
-                                    <li class="heart-link">
-                                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>">
-                                            <?php mori_svg_icons('heart');?>
-                                        </a>
-                                    </li>
-                                    <?php if (class_exists('WooCommerce')){?>
-                                        <li><a class="cart-open" href="javascript:void(0)">
-                                                <?php mori_svg_icons('shopping-cart');?> <span class="mori-cart-count">0</span></a>
+                        <div class="col-lg-7 col-md-4 col-sm-4 col desktop_right_col">
+                            <div class="middle-menu-right">
+                                <div class="main-menu-navigation">
+                                    <nav class="navigation-main-area ul-li">
+                                        <?php
+                                        echo str_replace(['menu-item-has-children', 'sub-menu'], ['dropdown', 'dropdown-menu clearfix'],
+                                            wp_nav_menu(array(
+                                                    'container' => false,
+                                                    'echo' => false,
+                                                    'menu_id' => 'main-nav',
+                                                    'theme_location' => 'primary',
+                                                    'fallback_cb' => 'mori_no_main_nav',
+                                                    'items_wrap' => '<ul>%3$s</ul>',
+                                                )
+                                            ));
+                                        ?>
+                                    </nav>
+                                </div>
+                                <div class="menu-right">
+                                    <ul class="menu-right-list">
+                                        <li class="language-drop">
+                                            <select name="lang" id="lang">
+                                                <option value="nl">
+                                                    <span class="flag">🇳🇱</span> <span class="lang-name">NL</span>
+                                                </option>
+                                                <option value="en">
+                                                    <span class="flag">🇬🇧</span> <span class="lang-name">EN</span>
+                                                </option>
+                                            </select>
                                         </li>
-                                    <?php } ?>
-                                </ul>
+                                        <li class="user-link">
+                                            <a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>">
+                                                <?php mori_svg_icons('user');?>
+                                            </a>
+                                        </li>
+                                        <li class="heart-link">
+                                            <a href="<?php echo esc_url(wc_get_page_permalink('myaccount'));?>">
+                                                <?php mori_svg_icons('heart');?>
+                                            </a>
+                                        </li>
+                                        <?php if (class_exists('WooCommerce')){?>
+                                            <li><a class="cart-open" href="javascript:void(0)">
+                                                    <?php mori_svg_icons('shopping-cart');?> <span class="mori-cart-count">0</span></a>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

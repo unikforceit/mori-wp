@@ -41,7 +41,12 @@
         }
     }
 }
-/* End Sticky */
+@media screen and (min-width: 991px) {
+    .admin-bar .main-header.sticky-on{
+        top: 32px;
+    }
+}
+    /* End Sticky */
 
 
 /*** Start Main Header ***/
@@ -204,15 +209,28 @@
 }
 
 .menu-right {
-    ul {
+    ul.menu-right-list {
         margin: 0;
         display: flex;
         padding: 0;
         justify-content: flex-end;
+        gap: 20px;
         li {
-            display: inline-block;
+            &.language-drop{
+                @media screen and (max-width: 991px) {
+                    display: none;
+                }
+            }
+            .nice-select{
+                background: transparent;
+                border: none;
+                height: auto;
+                padding-left: 5px;
+                padding-right: 20px;
+                font-size: toRem(12);
+            }
+            list-style: none;
             position: relative;
-            padding: 0 12px;
             &.user-link{
                 @media screen and (max-width: 991px) {
                     display: none;
@@ -232,15 +250,15 @@
                 span {
                     position: absolute;
                     bottom: 0;
-                    right: -15px;
-                    height: 20px;
-                    width: 20px;
+                    right: -8px;
+                    height: 14px;
+                    width: 14px;
                     border-radius: 50%;
                     background: $black;
-                    font-size: 11px;
+                    font-size: 8px;
                     color: #fff;
                     text-align: center;
-                    line-height: 20px;
+                    line-height: 14px;
                 }
             }
         }
@@ -435,10 +453,23 @@
         display: none;
     }
 }
-.desktop_menu_col {
-    @media screen and (max-width: 1024px) {
-        display: none;
+@media screen and (max-width: 991px) {
+    .desktop_logo_col {
+        width: 30%;
     }
+    .mobile_menu_col {
+        width: 40%;
+    }
+    .desktop_right_col {
+        width: 30%;
+    }
+}
+
+.middle-menu-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-end;
 }
 .mobile-bar-wrap {
     display: flex;

@@ -441,6 +441,10 @@ function mori_svg_icons($icon_name)
 {
     echo '<i class="mori-svg">'.file_get_contents(get_template_directory_uri(). '/assets/icons/'.$icon_name.'.svg').'</i>';
 }
+function mori_theme_image($image_name, $class = 'mori-image')
+{
+    echo '<img class="'.$class.'" src="'.get_template_directory_uri(). '/images/'.$image_name.'">';
+}
 // In your theme's functions.php or a custom plugin
 function get_theme_svg_icons() {
     $icons_path = get_template_directory() . '/assets/icons/';
@@ -464,3 +468,41 @@ function get_theme_svg_icons() {
 
     return $icons;
 }
+
+/**
+ * Replace <i> tags with SVG content
+ */
+function replace_icon_tags_with_svg($content) {
+    // Only run on frontend
+    if (is_admin()) return $content;
+
+    // Find all <i> tags with icon- classes
+    preg_match_all('/<i class="[^"]*icon-([^"\s]+)[^"]*"[^>]*><\/i>/', $content, $matches);
+
+    if (empty($matches[1])) return $content;
+
+    foreach ($matches[1] as $index => $icon_name) {
+        $svg_path = get_template_directory() . '/assets/icons/' . $icon_name . '.svg';
+
+        if (file_exists($svg_path)) {
+            $svg_content = file_get_contents($svg_path);
+            // Clean up SVG (remove XML declaration and comments)
+            $svg_content = preg_replace('/<\?xml.*?\?>|<!--.*?-->/s', '', $svg_content);
+            // Preserve original classes
+            $original_tag = $matches[0][$index];
+            preg_match('/class="([^"]*)"/', $original_tag, $class_matches);
+            $classes = isset($class_matches[1]) ? $class_matches[1] : '';
+            // Replace <i> with SVG
+            $content = str_replace(
+                $original_tag,
+                '<span class="mori-svg-icon ' . esc_attr($classes) . '">' . $svg_content . '</span>',
+                $content
+            );
+        }
+    }
+
+    return $content;
+}
+add_filter('the_content', 'replace_icon_tags_with_svg', 20);
+add_filter('widget_text', 'replace_icon_tags_with_svg', 20);
+add_filter('wp_nav_menu_items', 'replace_icon_tags_with_svg', 20);

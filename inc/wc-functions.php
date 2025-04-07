@@ -283,3 +283,59 @@ function save_custom_registration_fields( $customer_id ) {
         update_user_meta( $customer_id, 'phone', sanitize_text_field( $_POST['phone'] ) );
     }
 }
+
+/**
+ * Add WooCommerce-specific body classes
+ */
+function add_woocommerce_body_classes($classes) {
+    if (function_exists('is_woocommerce')) {
+        // General WooCommerce pages
+        if (is_woocommerce()) {
+            $classes[] = 'mori-woocommerce-page';
+        }
+
+        // Shop page
+        if (is_shop()) {
+            $classes[] = 'mori-woocommerce-shop';
+        }
+
+        // Checkout page
+        if (is_checkout()) {
+            $classes[] = 'mori-woocommerce-checkout';
+        }
+        if(is_page( get_option( 'mori_register_page' ) )){
+            $classes[] = 'mori-woocommerce-register';
+        }
+
+        // Account pages
+        if (is_account_page()) {
+            $classes[] = 'mori-woocommerce-account';
+            if (is_wc_endpoint_url('orders')) {
+                $classes[] = 'mori-woocommerce-account-orders';
+            }
+            if (is_wc_endpoint_url('view-order')) {
+                $classes[] = 'mori-woocommerce-account-view-order';
+            }
+            if (is_wc_endpoint_url('downloads')) {
+                $classes[] = 'mori-woocommerce-account-downloads';
+            }
+            if (is_wc_endpoint_url('edit-address')) {
+                $classes[] = 'mori-woocommerce-account-edit-address';
+            }
+            if (is_wc_endpoint_url('payment-methods')) {
+                $classes[] = 'mori-woocommerce-account-payment-methods';
+            }
+            if (is_wc_endpoint_url('edit-account')) {
+                $classes[] = 'mori-woocommerce-account-edit-account';
+            }
+        }
+
+        // Order received/thank you page
+        if (is_order_received_page()) {
+            $classes[] = 'mori-woocommerce-order-received';
+        }
+    }
+
+    return $classes;
+}
+add_filter('body_class', 'add_woocommerce_body_classes');

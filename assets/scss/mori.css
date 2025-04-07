@@ -63,14 +63,6 @@
   background-color: rgb(231, 159, 126) !important;
 }
 
-.f-josefin {
-  font-family: "Poppins", sans-serif !important;
-}
-
-.f-poppins {
-  font-family: "Poppins", sans-serif !important;
-}
-
 .fz-14 {
   font-size: 0.875rem !important;
 }
@@ -141,6 +133,11 @@ body {
   line-height: 1.5;
   -moz-osx-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Optional: Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -222,6 +219,24 @@ select:visited {
 i.mori-svg svg {
   width: 20px;
   height: auto;
+}
+
+/* SVG Icon System */
+.mori-svg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.mori-svg-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
 }
 
 .preloader {
@@ -418,6 +433,11 @@ i.mori-svg svg {
   top: 60px;
 }
 
+@media screen and (min-width: 991px) {
+  .admin-bar .main-header.sticky-on {
+    top: 32px;
+  }
+}
 /* End Sticky */
 /*** Start Main Header ***/
 .menu-header {
@@ -564,45 +584,58 @@ i.mori-svg svg {
   top: 0;
 }
 
-.menu-right ul {
+.menu-right ul.menu-right-list {
   margin: 0;
   display: flex;
   padding: 0;
   justify-content: flex-end;
+  gap: 20px;
 }
-.menu-right ul li {
-  display: inline-block;
+.menu-right ul.menu-right-list li {
+  list-style: none;
   position: relative;
-  padding: 0 12px;
 }
 @media screen and (max-width: 991px) {
-  .menu-right ul li.user-link {
+  .menu-right ul.menu-right-list li.language-drop {
+    display: none;
+  }
+}
+.menu-right ul.menu-right-list li .nice-select {
+  background: transparent;
+  border: none;
+  height: auto;
+  padding-left: 5px;
+  padding-right: 20px;
+  font-size: 0.75rem;
+}
+@media screen and (max-width: 991px) {
+  .menu-right ul.menu-right-list li.user-link {
     display: none;
   }
 }
 @media screen and (min-width: 991px) {
-  .menu-right ul li.heart-link {
+  .menu-right ul.menu-right-list li.heart-link {
     display: none;
   }
 }
-.menu-right ul li a {
+.menu-right ul.menu-right-list li a {
   display: inline-block;
   font-size: 22px;
   color: #000;
   position: relative;
 }
-.menu-right ul li a span {
+.menu-right ul.menu-right-list li a span {
   position: absolute;
   bottom: 0;
-  right: -15px;
-  height: 20px;
-  width: 20px;
+  right: -8px;
+  height: 14px;
+  width: 14px;
   border-radius: 50%;
   background: #000000;
-  font-size: 11px;
+  font-size: 8px;
   color: #fff;
   text-align: center;
-  line-height: 20px;
+  line-height: 14px;
 }
 
 .middle-header .navigation-main-area li a {
@@ -789,10 +822,22 @@ i.mori-svg svg {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .desktop_menu_col {
-    display: none;
+@media screen and (max-width: 991px) {
+  .desktop_logo_col {
+    width: 30%;
   }
+  .mobile_menu_col {
+    width: 40%;
+  }
+  .desktop_right_col {
+    width: 30%;
+  }
+}
+.middle-menu-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .mobile-bar-wrap {
@@ -871,7 +916,7 @@ i.mori-svg svg {
 }
 .bottom-bar-area .header-right-buttons {
   display: flex;
-  column-gap: 0.75rem;
+  column-gap: 12px;
   justify-content: flex-end;
   position: relative;
 }
@@ -2067,13 +2112,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   color: #717171;
   font-style: italic;
 }
-.blog-post-item .content .title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.375rem;
-  font-weight: 700;
-  line-height: 2.5rem;
-  color: #212121;
-}
 .blog-post-item .content .excerpt {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
@@ -2084,11 +2122,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 }
 .blog-post-item .content .permaLink {
   display: inline-block;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.625rem;
-  color: rgb(231, 159, 126);
   text-decoration: underline;
 }
 
@@ -2160,14 +2193,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 }
 .post-dca ul li:last-child::after {
   display: none;
-}
-
-.post-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 4.125rem;
-  color: #212121;
 }
 
 .blog-post-content p {
@@ -2320,19 +2345,9 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   background-color: rgb(231, 159, 126);
 }
 .blog-sidebar .widget .widget-head h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-  color: #212121;
   padding-bottom: 10px;
 }
 .blog-sidebar .widget.widget_block h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-  color: #212121;
   padding-bottom: 10px;
   margin-bottom: 30px;
   position: relative;
@@ -2397,11 +2412,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 .blog-sidebar .widget_categories > ul > li a,
 .blog-sidebar .widget_categories > ul > li span {
   position: relative;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-  color: #fff;
 }
 .blog-sidebar .widget_categories > ul > li span {
   width: 3.1875rem;
@@ -2473,13 +2483,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   background-color: #1E1E1E;
   mix-blend-mode: multiply;
 }
-.blog-sidebar .sFollow-us .sidebar-social .social-item .iconText .sFollow-no {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 4.125rem;
-  color: #212121;
-}
 .blog-sidebar .sFollow-us .sidebar-social .social-item .info {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
@@ -2494,13 +2497,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   flex: 0 0 50%;
   padding-left: 1.25rem;
 }
-.blog-sidebar .sidebar_banner .content .title {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 2.875rem;
-  color: #212121;
-}
 .blog-sidebar .sidebar_banner .content .title span {
   display: block;
   font-family: "Poppins", sans-serif;
@@ -2511,11 +2507,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 }
 .blog-sidebar .sidebar_banner .content .sbanner_link {
   display: inline-block;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1rem;
-  color: #212121;
   text-decoration: underline;
   margin-top: 1.75rem;
 }
@@ -2576,13 +2567,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   flex: 0 0 auto;
   max-width: 50.625rem;
 }
-.blog-quote .content h4 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 2.1875rem;
-  color: #212121;
-}
 .blog-quote .content span.author {
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -2605,13 +2589,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 
 .blog-list {
   margin-bottom: 1.875rem;
-}
-.blog-list .title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 4.125rem;
-  color: #212121;
 }
 .blog-list ul li {
   position: relative;
@@ -2728,13 +2705,6 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 
 .comment {
   margin-top: 40px;
-}
-.comment h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 4.125rem;
-  color: #212121;
 }
 .comment ol li {
   list-style: none;
@@ -4906,6 +4876,7 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   background: #0D0D0D;
   padding: 70px 0;
   position: relative;
+  overflow: hidden;
 }
 .footer-widget-area .footer-widget .footer-widget-head {
   padding-bottom: 30px;
@@ -5014,6 +4985,26 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 }
 .footer-widget-area .footer-widget .mori-contact-widget ul li a:hover {
   color: #ffffff;
+}
+.footer-widget-area .footer-widget .newsletter-html-form form {
+  position: relative;
+}
+.footer-widget-area .footer-widget .newsletter-html-form form input[type=email] {
+  background: transparent;
+  border: 1px solid #707070;
+  border-radius: 28px;
+  padding: 8px 16px;
+  color: #ffffff;
+  width: 100%;
+}
+.footer-widget-area .footer-widget .newsletter-html-form form .newsletter-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+}
+.footer-widget-area .footer-widget .newsletter-html-form form .newsletter-btn svg path {
+  fill: #fff;
 }
 .footer-widget-area .footer-shape {
   position: absolute;
@@ -5479,6 +5470,14 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
   float: inherit;
 }
 
+.mori-woocommerce-account .blog-content .container {
+  max-width: 930px;
+}
+
+.mori-woocommerce-register .blog-content .container {
+  max-width: 1000px;
+}
+
 .woocommerce nav.woocommerce-pagination ul {
   border: 0;
   border-bottom: 1px solid #D4D4D4;
@@ -5583,7 +5582,7 @@ ul.woocommerce-mini-cart.cart_list.product_list_widget li img {
 button.woocommerce-Button.button.wp-element-button,
 .button-wrappper a.button {
   background: #ffffff;
-  padding: 10px 20px;
+  padding: 7px 20px;
   position: relative;
   color: #000000 !important;
   z-index: 1;
@@ -5592,7 +5591,7 @@ button.woocommerce-Button.button.wp-element-button,
   outline: none;
   box-shadow: none;
   border-radius: 1.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: inherit;
   float: none !important;
@@ -5820,6 +5819,7 @@ button.woocommerce-Button.button.wp-element-button:hover,
 .woocommerce-EditAccountForm .form-row input, .woocommerce-form-login .form-row input, .woocommerce-form-register .form-row input {
   border: none;
   border-bottom: 1px solid #cfcfcf !important;
+  border-radius: 0;
 }
 .woocommerce-EditAccountForm .form-row input:focus, .woocommerce-EditAccountForm .form-row input:hover, .woocommerce-form-login .form-row input:focus, .woocommerce-form-login .form-row input:hover, .woocommerce-form-register .form-row input:focus, .woocommerce-form-register .form-row input:hover {
   border-bottom-color: #E59D73 !important;
@@ -5862,14 +5862,22 @@ table.variations tbody tr:last-child > * {
   opacity: 0.3;
 }
 
+.register-form-wrapper {
+  text-align: center;
+}
+.register-form-wrapper .custom-logo-link {
+  opacity: 0.3;
+}
+
 .woocommerce form .form-row .input-text, .woocommerce form .form-row select {
   border: none;
   border-bottom: 1px solid #cfcfcf !important;
+  border-radius: 0;
 }
 
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
   padding: 50px;
-  margin: 2em 0;
+  margin: 0;
   background: #fff;
   border-radius: 20px;
 }
@@ -6364,14 +6372,31 @@ form.cart a.valento_product_wishlist_button.added {
   font-family: "Josefin Sans", sans-serif;
 }
 
+.login-sec-title {
+  max-width: 90%;
+}
 .login-sec-title p {
+  color: #000000;
   font-size: 1.1875rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 500;
+}
+@media screen and (max-width: 991px) {
+  .login-sec-title p {
+    font-size: 1rem;
+  }
 }
 .login-sec-title h2 {
-  font-family: "Inter", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
   font-size: 4.25rem;
   font-weight: 700;
   margin: 20px 0;
+}
+@media screen and (max-width: 991px) {
+  .login-sec-title h2 {
+    font-size: 2.75rem;
+  }
 }
 
 .login-author {
@@ -6385,7 +6410,35 @@ form.cart a.valento_product_wishlist_button.added {
 }
 .login-author .login-author-title {
   font-size: 1.1875rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 500;
   border-bottom: 1px solid #000000;
+}
+
+.form-register-link {
+  position: relative;
+  padding-top: 40px;
+  text-align: center;
+}
+.form-register-link:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 20px;
+  left: 0;
+  background: #d1d1d1;
+}
+
+.register-form-wrapper .custom-logo,
+.login-form-wrapper .custom-logo {
+  margin-top: 20px;
+  width: 130px;
+}
+
+.thm-btn.woocommerce-button-register {
+  background: #000000;
+  color: #fff;
 }
 
 /*# sourceMappingURL=mori.css.map */
